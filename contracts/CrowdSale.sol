@@ -1,31 +1,56 @@
 pragma solidity ^0.4.20;
 
-contract CrowdSale {
+import "./oraclizeAPI.sol";
+
+contract CrowdSale is usingOraclize {
     address public owner;
+    string public title;
+    string public description;
     uint public fundingGoal;
     uint public amountRaised;
     uint public deadline;
+    string public price;
     bool fundingGoalReached = false;
     bool crowdSaleClosed = false;
+
     mapping(address => uint) public balanceOf;
 
-    event GoalReached(address recipient, uint totalAmountRaised);
-    event FundTransfer(address backer, uint amount, bool isContribution);
+    event GoalReached(address indexed recipient, uint totalAmountRaised);
+    event FundTransfer(address indexed backer, uint amount, bool isContribution);
+
+    event LogNewOraclizeQuery(string description);
+    event LogCallMySelf(uint totalAmountRaised, bool fundingGoalReached);
 
     modifier afterDeadline() {
         if (now >= deadline) _;
     }
 
     constructor(
+        string _title,
+        string _description,
         uint _fundingGoalInEthers,
         uint _durationInMinutes
-    ) public {
+    ) public payable {
         owner = msg.sender;
+        title = _title;
+        description = _description;
         fundingGoal = _fundingGoalInEthers * 1 ether;
         deadline = now + _durationInMinutes * 1 minutes;
+
+        OAR = OraclizeAddrResolverI(0x6f485C8BF6fc43eA212E93BBF8ce046C7f1cb475);
+
+        uint durationInSeconds = deadline * 1 seconds;
+        oraclize_query(durationInSeconds, "URL", "");
     }
 
-    function () payable public {
+    function __callback(bytes32 myId, string result) payable public {
+        if (msg.sender != oraclize_cbAddress()) revert();
+        myId;
+        emit LogCallMySelf(amountRaised, fundingGoalReached);
+        result;
+    }
+
+    function() payable public {
         require(!crowdSaleClosed);
         uint amount = msg.value;
         balanceOf[msg.sender] += amount;
@@ -40,7 +65,7 @@ contract CrowdSale {
         }
         crowdSaleClosed = true;
     }
-    
+
     function safeWithdrawal() public afterDeadline {
         if (!fundingGoalReached) {
             uint amount = balanceOf[msg.sender];
@@ -55,11 +80,19 @@ contract CrowdSale {
         }
 
         if (fundingGoalReached && owner == msg.sender) {
-            if(owner.send(amountRaised)) {
+            if (owner.send(amountRaised)) {
                 emit FundTransfer(owner, amountRaised, false);
             } else {
                 fundingGoalReached = false;
             }
         }
+    }
+
+    function isGoalReached() view returns (bool) {
+        return fundingGoalReached;
+    }
+
+    function isDeadlineReached() view returns (bool) {
+        return now > deadline;
     }
 }

@@ -7,11 +7,10 @@ import { withContext } from '../_API/withContext'
 class CrowdSale extends React.PureComponent {
 	crowdSale = null
 	crowdSaleInstance = null
-	web3 = null
 
 	state = {
-		fundingGoal: 0,
-		timeInMinutes: 0,
+		crowdSaleData: null,
+		fundingInEthers: 2,
 		address: ''
 	}
 
@@ -23,24 +22,34 @@ class CrowdSale extends React.PureComponent {
 	}
 
 	componentDidMount() {
-		this.crowdSale.deployed().then((instance) => {
-			this.crowdSaleInstance = instance
-			this.watchEvents()
-			this.getData()
-		})
+		this.crowdSale.at('0x672d635c4bf08da629c2c8cc648d70319d80ca11')
+			.then((instance) => {
+				this.crowdSaleInstance = instance
+				this.watchEvents()
+				this.getData()
+			})
 	}
 
 	getData = () => {
+		const {account, web3} = this.props
 		Promise.all([
+			this.crowdSaleInstance.title(),
+			this.crowdSaleInstance.description(),
 			this.crowdSaleInstance.fundingGoal(),
 			this.crowdSaleInstance.amountRaised(),
 			this.crowdSaleInstance.deadline(),
+			this.crowdSaleInstance.owner(),
 		])
-			.then(([fundingGoal, amountRaised, deadline]) => {
-				console.log(this.props.account)
-				console.log(this.props.web3.fromWei(fundingGoal.toNumber(), 'ether'))
-				console.log(this.props.web3.fromWei(amountRaised.toNumber(), 'ether'))
-				console.log(moment.unix(deadline.toNumber()).format('DD/MM/YYYY HH:mm:ss'))
+			.then(([title, description, fundingGoal, amountRaised, deadline]) => {
+				const crowdSaleData = {
+					title,
+					description,
+					account,
+					fundingGoal: web3.fromWei(fundingGoal.toNumber(), 'ether'),
+					amountRaised: web3.fromWei(amountRaised.toNumber(), 'ether'),
+					deadline: moment.unix(deadline.toNumber()).format('DD/MM/YYYY HH:mm:ss')
+				}
+				this.setState({crowdSaleData})
 			})
 	}
 
@@ -53,18 +62,25 @@ class CrowdSale extends React.PureComponent {
 	}
 
 	watchEvents() {
-		this.crowdSaleInstance.GoalReached({}, {
-			fromBlock: 0,
-			toBlock: 'latest'
-		}).watch((error, logs) => {
-			console.log('GoalReached', logs)
-		})
+		// this.crowdSaleInstance.GoalReached({}, {
+		// 	fromBlock: 0,
+		// 	toBlock: 'latest'
+		// }).watch((error, logs) => {
+		// 	console.log('GoalReached', logs)
+		// })
+		//
+		// this.crowdSaleInstance.FundTransfer({}, {
+		// 	fromBlock: 0,
+		// 	toBlock: 'latest'
+		// }).watch((error, logs) => {
+		// 	console.log('FundTransfer', logs)
+		// })
 
-		this.crowdSaleInstance.FundTransfer({}, {
+		this.crowdSaleInstance.allEvents({}, {
 			fromBlock: 0,
 			toBlock: 'latest'
 		}).watch((error, logs) => {
-			console.log('FundTransfer', logs)
+			console.log('allEvents0', logs)
 		})
 	}
 
@@ -76,48 +92,39 @@ class CrowdSale extends React.PureComponent {
 
 	onSubmit = () => {
 		console.log(this.state)
+		this.crowdSaleInstance.updatePrice({from: this.props.account})
+			.then(console.log)
+	}
+
+	onSendTransaction = () => {
+		this.crowdSaleInstance.sendTransaction({
+			from: this.props.account,
+			to: this.crowdSaleInstance.address,
+			value: this.props.web3.toWei('5', 'ether') //optional, if you want to pay the contract Ether
+		})
+			.then(console.log)
+			.catch(console.log)
 	}
 
 	render() {
 		const {
-			fundingGoal,
-			timeInMinutes,
-			address
+			crowdSaleData
 		} = this.state
 		return (
 			<div>
 				<h1>CrowdSale</h1>
-				<form>
-					<label htmlFor="fundingGoal">Funding goal</label>
-					<input
-						type="number"
-						id="fundingGoal"
-						value={fundingGoal}
-						onChange={this.onChangeText('fundingGoal')}
-					/>
-					<br/>
-					<label htmlFor="timeInMinutes">Time in minutes</label>
-					<input
-						type="number"
-						id="timeInMinutes"
-						value={timeInMinutes}
-						onChange={this.onChangeText('timeInMinutes')}
-					/>
-					<br/>
-					<input type="button" value="Create" onClick={this.onSubmit}/>
-
-					<br/>
-					<br/>
-					<label htmlFor="address">Balance Of</label>
-					<input
-						type="text"
-						id="address"
-						value={address}
-						onChange={this.onChangeText('address')}
-					/>
-					<br/>
-					<input type="button" value="Check" onClick={this.getBalanceOf}/>
-				</form>
+				<ul>
+					{
+						crowdSaleData && Object.keys(crowdSaleData)
+							.map(k => <li key={k}>{crowdSaleData[k]}</li>)
+					}
+				</ul>
+				<input
+					type="number"
+					value={this.state.fundingInEthers}
+					onChange={this.onChangeText('fundingInEthers')}
+				/>
+				<button>Fund</button>
 			</div>
 		)
 	}

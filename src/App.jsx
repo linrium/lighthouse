@@ -1,6 +1,8 @@
 import React from 'react'
 import Web3 from 'web3'
 import CrowdSale from './CrowdSale/CrowdSale'
+import CrowdSaleApp from './CrowdSaleApp/CrowdSaleApp'
+import Home from './Home/Home'
 
 export const AppContext = React.createContext()
 
@@ -41,7 +43,9 @@ export class App extends React.PureComponent {
 				web3Provider: this.web3Provider,
 				account: this.state.account
 			}}>
-				<CrowdSale/>
+				{/*<CrowdSaleApp/>*/}
+				{/*<CrowdSale/>*/}
+				<Home/>
 			</AppContext.Provider>
 		)
 	}
