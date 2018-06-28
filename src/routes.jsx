@@ -3,7 +3,7 @@ import {
 	Switch
 } from 'react-router-dom'
 import React from 'react'
-import HomePage from './Home/HomePage'
+import HomeContainer from './Home/HomeContainer'
 import ProjectPage from './Project/ProjectPage'
 import StartContainer from './Start/StartContainer'
 
@@ -11,7 +11,7 @@ export const routes = [
 	{
 		path: '/',
 		exact: true,
-		main: () => <HomePage/>
+		main: () => <HomeContainer/>
 	},
 	{
 		path: '/project/:projectId',

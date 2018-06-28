@@ -29,29 +29,10 @@ class StartContainer extends React.PureComponent {
 		buffer: null,
 		imagePreviewUrl: ''
 	}
-
-	constructor(props) {
-		super(props)
-
-		this.crowdSaleApp = TruffleContract(CrowdSaleAppContract)
-		this.crowdSaleApp.setProvider(this.props.web3Provider)
-	}
-
-	componentDidMount() {
-		this.crowdSaleApp.deployed().then((instance) => {
-			this.crowdSaleAppInstance = instance
-			this.watchEvents()
-		})
-	}
-
-	watchEvents() {
-		this.crowdSaleAppInstance.LogCrowdSaleCreated({}, {
-			fromBlock: 0,
-			toBlock: 'latest'
-		}).watch((error, logs) => {
-			console.log('allEvents', logs)
-		})
-	}
+	
+	// static getDerivedStateFromProps(props) {
+	// 	console.log(props)
+	// }
 
 	onChangeText = key => e => {
 		this.setState({
@@ -123,13 +104,14 @@ class StartContainer extends React.PureComponent {
 			console.log('upload image succeeded', result)
 			console.log('create crowd sale')
 
-			this.crowdSaleAppInstance
+			this.props.crowdSaleAppInstance
 				.createCrowdSale(
 					title,
 					description,
 					parseFundingGoal,
 					parseDuration,
 					result[0].hash,
+					// 'QmSeyZj2LVYrpsQ487STwipki2gwabGFzmvmqUvDShAo89',
 					{from: this.props.account}
 				)
 				.then(result => {
@@ -158,9 +140,8 @@ class StartContainer extends React.PureComponent {
 	}
 }
 
-
 export default withContext([
 	'web3',
 	'account',
-	'web3Provider'
+	'crowdSaleAppInstance'
 ])(StartContainer)

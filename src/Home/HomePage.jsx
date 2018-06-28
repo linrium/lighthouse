@@ -14,8 +14,18 @@ class HomePage extends React.PureComponent {
 				<Wrapper>
 					<ListCards>
 						{
-							[...Array(9).keys()]
-								.map(k => (<AppCard key={k} to={`project/${k}`}/>))
+							this.props.LogCrowdSaleCreated
+								.map(log => {
+									return (
+										<AppCard
+											address={log.address}
+											web3Provider={this.props.web3Provider}
+											args={log.args}
+											key={log.transactionHash}
+											to={`project/${log.transactionHash}`}
+										/>
+									)
+								})
 						}
 					</ListCards>
 					<AppButton value="Load more"/>

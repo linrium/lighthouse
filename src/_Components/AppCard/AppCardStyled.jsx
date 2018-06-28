@@ -15,7 +15,7 @@ export const Container = styled(Link)`
 `
 
 export const Thumbnail = styled.div`
-	background: url("${Images.thumbnail1}") no-repeat center center;
+	background: url("${props => props.value || Images.thumbnail1}") no-repeat center center;
 	background-size: 100%;
 	width: 100%;
 	height: 300px;
@@ -48,7 +48,7 @@ export const ByAuthor = styled.h3`
 
 export const ProgressBar = styled.div`
 	margin-bottom: 8px;
-	width: ${props => props.width || 100}%;
+	width: 100%;
 	height: 5px;
 	background: ${props => props.bgColor || Colors.primary};
 `

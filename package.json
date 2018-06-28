@@ -52,6 +52,7 @@
     "dotenv": "^2.0.0",
     "ipfs-api": "^22.1.1",
     "moment": "^2.22.2",
+    "ramda": "^0.25.0",
     "react": "^16.4.1",
     "react-autosize-textarea": "^4.0.0",
     "react-click-outside": "tj/react-click-outside",

@@ -10,8 +10,8 @@ contract CrowdSale is usingOraclize {
     uint public amountRaised;
     uint public deadline;
     string public thumbnail;
-    bool fundingGoalReached = false;
-    bool crowdSaleClosed = false;
+    bool public fundingGoalReached = false;
+    bool public crowdSaleClosed = false;
 
     mapping(address => uint) public balanceOf;
 
@@ -88,10 +88,6 @@ contract CrowdSale is usingOraclize {
                 fundingGoalReached = false;
             }
         }
-    }
-
-    function isGoalReached() view public returns (bool) {
-        return fundingGoalReached;
     }
 
     function isDeadlineReached() view public returns (bool) {
