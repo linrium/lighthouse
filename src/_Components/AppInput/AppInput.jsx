@@ -8,7 +8,7 @@ class AppInput extends React.PureComponent {
 	render() {
 		return (
 			<Container>
-				<Input/>
+				<Input {...this.props}/>
 			</Container>
 		)
 	}

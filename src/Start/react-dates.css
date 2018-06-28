@@ -1,0 +1,26 @@
+.DateRangePicker {
+    border: 1px solid;
+    width: 100%;
+    margin-top: 16px;
+}
+
+.DateRangePickerInput_arrow_svg {
+    height: 30px;
+}
+
+.DayPicker__withBorder {
+    border-radius: 0;
+}
+
+.DayPickerNavigation_button__horizontalDefault {
+    border-radius: 0;
+}
+
+.DateRangePickerInput__withBorder {
+    border-bottom: none;
+    border-radius: 0;
+}
+
+.DateInput_input__focused {
+    border-bottom: 2px solid #42b983;
+}

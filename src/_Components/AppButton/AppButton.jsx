@@ -5,7 +5,7 @@ class AppButton extends React.PureComponent {
 	render() {
 		return (
 			<Container>
-				Load more
+				{this.props.value}
 			</Container>
 		)
 	}

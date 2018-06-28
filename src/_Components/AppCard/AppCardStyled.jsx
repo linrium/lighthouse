@@ -52,7 +52,7 @@ export const Pledged = styled.h4`
 	margin: 16px 0;
 	color: ${Colors.accent};
 	&:before {
-		content: "$ ";
+		content: "ETH ";
 	}
 `
 

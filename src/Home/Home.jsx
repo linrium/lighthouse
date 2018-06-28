@@ -18,7 +18,7 @@ class Home extends React.PureComponent {
 								.map(k => (<AppCard key={k}/>))
 						}
 					</ListCards>
-					<AppButton/>
+					<AppButton value="Load more"/>
 				</Wrapper>
 			</Container>
 		)

@@ -15,6 +15,7 @@ export const TextArea = styled(TextareaAutosize)`
 	border: 1px solid ${Colors.primary};
 	width: 100%;
 	resize: none;
+	box-sizing: border-box;
 	
 	&:focus {
 		border-color: ${Colors.accent};

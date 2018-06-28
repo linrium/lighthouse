@@ -4,7 +4,6 @@ import { Colors } from '../_Variables/Colors'
 
 export const Container = styled.div`
 	//background: url("assets/thumbnail.jpeg") no-repeat fixed center center;
-	height: 100vh;
 	width: 100%;
 	display: flex;
   justify-content: center;

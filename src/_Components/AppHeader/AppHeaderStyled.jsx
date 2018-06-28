@@ -13,6 +13,7 @@ export const Container = styled.div`
 	display: flex;
 	font-weight: 300;
 	border-bottom: 1px solid ${Colors.primary};
+	z-index: 1000;
 `
 
 export const Logo = styled.h1`

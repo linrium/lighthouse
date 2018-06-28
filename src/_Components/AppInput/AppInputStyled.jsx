@@ -13,6 +13,7 @@ export const Input = styled.input`
 	font-size: 16px;
 	border: 1px solid ${Colors.primary};
 	width: 100%;
+	box-sizing: border-box;
 	
 	&:focus {
 		border-color: ${Colors.accent};
