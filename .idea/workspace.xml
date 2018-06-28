@@ -2,30 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b4ef42f-ed72-4136-8cc4-7c06ae47c472" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Home/HomeContainer.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Start/StartContainer.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_API/autoSave.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/linh.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/linh.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/CrowdSale.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/CrowdSale.sol" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contracts/CrowdSaleApp.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/CrowdSaleApp.sol" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Home/HomePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Home/HomeStyled.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Home/HomeStyled.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Project/Project.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Project/ProjectPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Project/ProjectStyled.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Project/ProjectStyled.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Start/Start.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Start/StartPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Start/StartContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Start/StartContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Start/StartPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Start/StartPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Start/StartStyled.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Start/StartStyled.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_Components/AppButton/AppButtonStyled.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_Components/AppButton/AppButtonStyled.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_Components/AppCard/AppCardStyled.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_Components/AppCard/AppCardStyled.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_Components/AppHeader/AppHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_Components/AppHeader/AppHeader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_Components/AppHeader/AppHeaderStyled.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_Components/AppHeader/AppHeaderStyled.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_Components/AppInput/AppInputStyled.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_Components/AppInput/AppInputStyled.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_Components/AppSelect/AppSelectStyled.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_Components/AppSelect/AppSelectStyled.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_Components/AppTextArea/AppTextArea.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_Components/AppTextArea/AppTextArea.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_Components/AppTextArea/AppTextAreaStyled.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_Components/AppTextArea/AppTextAreaStyled.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -57,11 +39,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="StartContainer.jsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="StartContainer.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Start/StartContainer.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="78" column="3" lean-forward="true" selection-start-line="78" selection-start-column="3" selection-end-line="78" selection-end-column="3" />
+            <state relative-caret-position="260">
+              <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -69,11 +51,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CrowdSale.sol" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StartPage.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Start/StartPage.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="481">
+              <caret line="85" column="13" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StartStyled.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Start/StartStyled.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="538">
+              <caret line="48" column="1" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CrowdSale.sol" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/contracts/CrowdSale.sol">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="33" column="22" lean-forward="true" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+            <state relative-caret-position="176">
+              <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -81,8 +87,8 @@
       <file leaf-file-name="CrowdSaleApp.sol" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/contracts/CrowdSaleApp.sol">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="31" column="119" selection-start-line="31" selection-start-column="119" selection-end-line="31" selection-end-column="119" />
+            <state relative-caret-position="141">
+              <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -128,7 +134,6 @@
         <option value="$PROJECT_DIR$/src/Project/Project.jsx" />
         <option value="$PROJECT_DIR$/src/Project/ProjectStyled.jsx" />
         <option value="$PROJECT_DIR$/src/Home/HomeStyled.jsx" />
-        <option value="$PROJECT_DIR$/src/Start/StartStyled.jsx" />
         <option value="$PROJECT_DIR$/src/_Components/AppTextArea/AppTextAreaStyled.jsx" />
         <option value="$PROJECT_DIR$/src/_Components/AppSelect/AppSelectStyled.jsx" />
         <option value="$PROJECT_DIR$/src/_Components/AppInput/AppInputStyled.jsx" />
@@ -136,14 +141,15 @@
         <option value="$PROJECT_DIR$/src/_Components/AppButton/AppButtonStyled.jsx" />
         <option value="$PROJECT_DIR$/src/_Components/AppHeader/AppHeaderStyled.jsx" />
         <option value="$PROJECT_DIR$/src/Start/Start.jsx" />
-        <option value="$PROJECT_DIR$/src/Start/StartPage.jsx" />
         <option value="$PROJECT_DIR$/src/_Components/AppTextArea/AppTextArea.jsx" />
         <option value="$PROJECT_DIR$/src/_API/autoSave.jsx" />
         <option value="$PROJECT_DIR$/src/routes.jsx" />
         <option value="$PROJECT_DIR$/src/App.jsx" />
-        <option value="$PROJECT_DIR$/src/Start/StartContainer.jsx" />
-        <option value="$PROJECT_DIR$/contracts/CrowdSaleApp.sol" />
         <option value="$PROJECT_DIR$/contracts/CrowdSale.sol" />
+        <option value="$PROJECT_DIR$/src/Start/StartStyled.jsx" />
+        <option value="$PROJECT_DIR$/src/Start/StartPage.jsx" />
+        <option value="$PROJECT_DIR$/contracts/CrowdSaleApp.sol" />
+        <option value="$PROJECT_DIR$/src/Start/StartContainer.jsx" />
       </list>
     </option>
   </component>
@@ -343,7 +349,7 @@
       <updated>1530089107810</updated>
       <workItem from="1530089110258" duration="119000" />
       <workItem from="1530089254636" duration="18362000" />
-      <workItem from="1530156651211" duration="26215000" />
+      <workItem from="1530156651211" duration="30210000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1530101353729</created>
@@ -387,17 +393,24 @@
       <option name="project" value="LOCAL" />
       <updated>1530178973213</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="update">
+      <created>1530202791012</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1530202791012</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44696000" />
+    <option name="totallyTimeSpent" value="48691000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="767" y="414" width="1107" height="1075" extended-state="0" />
+    <frame x="742" y="100" width="1107" height="1075" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2028169" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2028169" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -405,7 +418,7 @@
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Mongo Explorer" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32930514" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32930514" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -450,7 +463,8 @@
     <MESSAGE value="add UI" />
     <MESSAGE value="start page" />
     <MESSAGE value="project page" />
-    <option name="LAST_COMMIT_MESSAGE" value="project page" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Home/HomePage.jsx">
@@ -670,15 +684,6 @@
     <entry file="file://$PROJECT_DIR$/src/Home/HomeStyled.jsx">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Start/StartStyled.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Project/ProjectStyled.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -764,16 +769,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Start/StartPage.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1023">
-          <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/_API/autoSave.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -828,9 +823,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Home/HomeContainer.jsx">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1092">
@@ -841,27 +833,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Start/StartContainer.jsx">
+    <entry file="file://$PROJECT_DIR$/src/Home/HomeContainer.jsx">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/CrowdSale.sol">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="78" column="3" lean-forward="true" selection-start-line="78" selection-start-column="3" selection-end-line="78" selection-end-column="3" />
+        <state relative-caret-position="176">
+          <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/CrowdSaleApp.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Start/StartStyled.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="48" column="1" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Start/StartPage.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="85" column="13" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/CrowdSaleApp.sol">
+    <entry file="file://$PROJECT_DIR$/src/Start/StartContainer.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="31" column="119" selection-start-line="31" selection-start-column="119" selection-end-line="31" selection-end-column="119" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/CrowdSale.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="33" column="22" lean-forward="true" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+        <state relative-caret-position="260">
+          <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

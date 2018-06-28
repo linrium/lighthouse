@@ -6,7 +6,7 @@ contract CrowdSaleApp {
     address public owner;
 
     event LogCrowdSaleCreated(
-        address contractCaller,
+        address indexed contractCaller,
         address contractAddr,
         address indexed creator,
         string title,

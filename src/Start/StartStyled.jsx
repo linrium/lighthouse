@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Colors } from '../_Variables/Colors'
+import Dropzone from 'react-dropzone'
 
 export const Container = styled.div`
 	//background: url("assets/thumbnail.jpeg") no-repeat fixed center center;
@@ -30,4 +31,19 @@ export const SubLabel = styled.span`
 	color: ${Colors.primary};
 	margin-top: 16px;
 	font-weight: 300;
+`
+
+export const DropZone = styled(Dropzone)`
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border: 1px dashed ${Colors.primary};
+    border-radius: 0;
+    margin: 16px 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
 `

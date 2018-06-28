@@ -2,6 +2,7 @@ import React from 'react'
 import { DateRangePicker } from 'react-dates'
 import {
 	Container,
+	DropZone,
 	Label,
 	SubLabel,
 	Wrapper
@@ -11,6 +12,7 @@ import AppTextArea from '../_Components/AppTextArea/AppTextArea'
 import AppSelect from '../_Components/AppSelect/AppSelect'
 import AppButton from '../_Components/AppButton/AppButton'
 import countries from './countries'
+
 
 import 'react-dates/initialize'
 import 'react-dates/lib/css/_datepicker.css'
@@ -25,6 +27,7 @@ class StartPage extends React.PureComponent {
 			description,
 			fundingGoalInEthers,
 			durationInMinutes,
+			imagePreviewUrl,
 
 			onChangeText,
 			onCreate
@@ -69,6 +72,19 @@ class StartPage extends React.PureComponent {
 						value={durationInMinutes}
 						onChange={onChangeText('durationInMinutes')}
 					/>
+
+					<Label>Add thumbnail</Label>
+					<SubLabel>Be careful !!! You can't change it after create.</SubLabel>
+					<DropZone
+						multiple={false}
+						onDrop={this.props.captureFile}
+					>
+						{
+							imagePreviewUrl ?
+								<img src={this.props.imagePreviewUrl} alt="thumbnail" width="100%"/> :
+								<p>Try dropping some files here, or click to select files to upload.</p>
+						}
+					</DropZone>
 
 					{/*<Label>When is the project end?</Label>*/}
 					{/*<SubLabel>Be careful !!! You can't change it after create.</SubLabel>*/}
