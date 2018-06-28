@@ -1,13 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Colors } from '../../_Variables/Colors'
+import { Link } from 'react-router-dom'
 
-export const Container = styled.div`
+export const Container = styled(Link)`
+	display: block;
 	width: 400px;
 	//height: 500px;
 	border: 1px solid ${Colors.primary};
 	font-weight: 300;
 	cursor: pointer;
+	text-decoration: none;
+	color: ${Colors.primary};
 `
 export const Thumbnail = styled.div`
 	background: url("https://i.pinimg.com/564x/eb/71/b7/eb71b7f0713fda0c42dd4dd4478119f8.jpg") no-repeat center center;

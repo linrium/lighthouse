@@ -16,7 +16,7 @@ import { Colors } from '../../_Variables/Colors'
 class AppCard extends React.PureComponent {
 	render() {
 		return (
-			<Container>
+			<Container to={this.props.to}>
 				<Thumbnail/>
 				<InfoContainer>
 					<Title>RUNVI - THE WORLD’S MOST ADVANCED DIGITAL RUNNING COACH</Title>

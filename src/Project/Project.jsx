@@ -3,26 +3,20 @@ import {
 	Container,
 	ListCards,
 	Wrapper
-} from './HomeStyled'
+} from './ProjectStyled'
 import AppCard from '../_Components/AppCard/AppCard'
 import AppButton from '../_Components/AppButton/AppButton'
 
-class Home extends React.PureComponent {
+class Project extends React.PureComponent {
 	render() {
 		return (
 			<Container>
 				<Wrapper>
-					<ListCards>
-						{
-							[...Array(9).keys()]
-								.map(k => (<AppCard key={k} to="project"/>))
-						}
-					</ListCards>
-					<AppButton value="Load more"/>
+					<h1>Hello</h1>
 				</Wrapper>
 			</Container>
 		)
 	}
 }
 
-export default Home
+export default Project

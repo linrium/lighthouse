@@ -10,12 +10,14 @@ import {
 class AppSelect extends React.PureComponent {
 	static defaultProps = {
 		data: [],
+		idKey: 'id',
+		valueKey: 'value',
 		setValueSuccess: () => {}
 	}
 
 	state = {
 		open: false,
-		item: ''
+		item: null
 	}
 
 	onSetValue = (item) => {
@@ -32,11 +34,15 @@ class AppSelect extends React.PureComponent {
 			open,
 			item
 		} = this.state
+		const {
+			idKey,
+			valueKey
+		} = this.props
 		return (
 			<ClickOutside onClickOutside={() => this.setState({open: false})}>
 				<Container>
 					<Input
-						value={item.value}
+						value={item ? item[valueKey] : ''}
 						onClick={() => this.setState({open: !open})}
 					/>
 					{
@@ -45,7 +51,7 @@ class AppSelect extends React.PureComponent {
 							{
 								this.props.data
 									.map(item => (
-										<ListItem key={item.id} onClick={() => this.onSetValue(item)}>{item.value}</ListItem>
+										<ListItem key={item[idKey]} onClick={() => this.onSetValue(item)}>{item[valueKey]}</ListItem>
 									))
 							}
 						</List>

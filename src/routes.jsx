@@ -5,6 +5,7 @@ import {
 import React from 'react'
 import Home from './Home/Home'
 import Start from './Start/Start'
+import Project from './Project/Project'
 
 export const routes = [
 	{
@@ -16,6 +17,11 @@ export const routes = [
 		path: '/start',
 		exact: true,
 		main: () => <Start/>
+	},
+	{
+		path: '/project',
+		exact: true,
+		main: () => <Project/>
 	},
 ]
 

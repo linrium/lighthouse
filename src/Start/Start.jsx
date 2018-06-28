@@ -14,6 +14,7 @@ import AppInput from '../_Components/AppInput/AppInput'
 import AppTextArea from '../_Components/AppTextArea/AppTextArea'
 import AppSelect from '../_Components/AppSelect/AppSelect'
 import AppButton from '../_Components/AppButton/AppButton'
+import countries from './countries'
 
 import 'react-dates/initialize'
 import 'react-dates/lib/css/_datepicker.css'
@@ -67,6 +68,10 @@ class Start extends React.PureComponent {
 					<Label>Describe what you’ll be creating.</Label>
 					<SubLabel>You can't also edit this later, too.</SubLabel>
 					<AppTextArea/>
+
+					<Label>Where are your country?</Label>
+					<SubLabel>You can't also edit this later, too.</SubLabel>
+					<AppSelect data={countries} idKey="code" valueKey="name"/>
 
 					<div style={{
 						display: 'flex',
