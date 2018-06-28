@@ -3,9 +3,10 @@ import { Container } from './AppButtonStyled'
 
 class AppButton extends React.PureComponent {
 	render() {
+		const {value, ...rest} = this.props
 		return (
-			<Container>
-				{this.props.value}
+			<Container {...rest}>
+				{value}
 			</Container>
 		)
 	}

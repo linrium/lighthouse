@@ -15,7 +15,7 @@ class Home extends React.PureComponent {
 					<ListCards>
 						{
 							[...Array(9).keys()]
-								.map(k => (<AppCard key={k} to="project"/>))
+								.map(k => (<AppCard key={k} to={`project/${k}`}/>))
 						}
 					</ListCards>
 					<AppButton value="Load more"/>

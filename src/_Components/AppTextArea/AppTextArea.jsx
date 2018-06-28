@@ -8,7 +8,10 @@ class AppTextArea extends React.PureComponent {
 	render() {
 		return (
 			<Container>
-				<TextArea rows={5}/>
+				<TextArea
+					rows={5}
+					placeholder={this.props.placeholder}
+				/>
 			</Container>
 		)
 	}

@@ -49,9 +49,13 @@ class Start extends React.PureComponent {
 					<SubLabel>Be careful!!! You can't change it after create.</SubLabel>
 					<AppInput placeholder="Ex: Hello world"/>
 
+					<Label>Describe what you’ll be creating.</Label>
+					<SubLabel>You can't also edit this later, too.</SubLabel>
+					<AppTextArea placeholder="Ex: Make world is a better place"/>
+
 					<Label>How many ETH you want to raise?</Label>
 					<SubLabel>Be careful !!! You can't change it after create.</SubLabel>
-					<AppInput placeholder="Ex: Make world is a better place"/>
+					<AppInput placeholder="Ex: 20"/>
 
 					<Label>When is the project end?</Label>
 					<SubLabel>Be careful !!! You can't change it after create.</SubLabel>
@@ -64,10 +68,6 @@ class Start extends React.PureComponent {
 						focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
 						onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
 					/>
-
-					<Label>Describe what you’ll be creating.</Label>
-					<SubLabel>You can't also edit this later, too.</SubLabel>
-					<AppTextArea/>
 
 					<Label>Where are your country?</Label>
 					<SubLabel>You can't also edit this later, too.</SubLabel>

@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Colors } from '../../_Variables/Colors'
 import { Link } from 'react-router-dom'
+import { Images } from '../../_Variables/Images'
 
 export const Container = styled(Link)`
 	display: block;
@@ -13,8 +14,9 @@ export const Container = styled(Link)`
 	text-decoration: none;
 	color: ${Colors.primary};
 `
+
 export const Thumbnail = styled.div`
-	background: url("https://i.pinimg.com/564x/eb/71/b7/eb71b7f0713fda0c42dd4dd4478119f8.jpg") no-repeat center center;
+	background: url("${Images.thumbnail1}") no-repeat center center;
 	background-size: 100%;
 	width: 100%;
 	height: 300px;
@@ -48,7 +50,7 @@ export const ByAuthor = styled.h3`
 export const ProgressBar = styled.div`
 	margin-bottom: 8px;
 	width: ${props => props.width || 100}%;
-	height: 3px;
+	height: 5px;
 	background: ${props => props.bgColor || Colors.primary};
 `
 

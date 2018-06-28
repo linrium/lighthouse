@@ -19,7 +19,7 @@ export const routes = [
 		main: () => <Start/>
 	},
 	{
-		path: '/project',
+		path: '/project/:projectId',
 		exact: true,
 		main: () => <Project/>
 	},

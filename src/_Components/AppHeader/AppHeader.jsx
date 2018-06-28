@@ -10,7 +10,7 @@ class AppHeader extends React.PureComponent {
 				<MenuItem to="start">Start a project</MenuItem>
 				<MenuItem to="">Search</MenuItem>
 
-				<MenuItem to="" style={{marginLeft: 'auto'}}>Notifications</MenuItem>
+				<MenuItem to="" style={{marginLeft: 'auto'}}>10 Notifications</MenuItem>
 				<MenuItem to="">Me</MenuItem>
 
 			</Container>
