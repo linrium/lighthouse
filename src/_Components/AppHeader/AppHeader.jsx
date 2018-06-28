@@ -7,7 +7,7 @@ class AppHeader extends React.PureComponent {
 			<Container>
 				<Logo>Lighthouse</Logo>
 				<MenuItem to="">Explore</MenuItem>
-				<MenuItem to="start">Start a project</MenuItem>
+				<MenuItem to="/start">Start a project</MenuItem>
 				<MenuItem to="">Search</MenuItem>
 
 				<MenuItem to="" style={{marginLeft: 'auto'}}>10 Notifications</MenuItem>

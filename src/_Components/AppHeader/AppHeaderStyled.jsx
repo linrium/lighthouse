@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import { Colors } from '../../_Variables/Colors'
 import { Link } from 'react-router-dom'

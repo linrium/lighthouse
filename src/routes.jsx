@@ -3,25 +3,25 @@ import {
 	Switch
 } from 'react-router-dom'
 import React from 'react'
-import Home from './Home/Home'
-import Start from './Start/Start'
-import Project from './Project/Project'
+import HomePage from './Home/HomePage'
+import ProjectPage from './Project/ProjectPage'
+import StartContainer from './Start/StartContainer'
 
 export const routes = [
 	{
 		path: '/',
 		exact: true,
-		main: () => <Home/>
-	},
-	{
-		path: '/start',
-		exact: true,
-		main: () => <Start/>
+		main: () => <HomePage/>
 	},
 	{
 		path: '/project/:projectId',
 		exact: true,
-		main: () => <Project/>
+		main: () => <ProjectPage/>
+	},
+	{
+		path: '/start',
+		exact: true,
+		main: () => <StartContainer/>
 	},
 ]
 

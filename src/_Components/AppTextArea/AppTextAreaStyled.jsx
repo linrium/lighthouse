@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import TextareaAutosize from 'react-autosize-textarea'
 import { Colors } from '../../_Variables/Colors'

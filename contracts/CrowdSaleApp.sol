@@ -6,12 +6,14 @@ contract CrowdSaleApp {
     address public owner;
 
     event LogCrowdSaleCreated(
+        address contractCaller,
         address contractAddr,
-        address creator,
-        string _title,
-        string _description,
-        uint _fundingGoalInEthers,
-        uint _durationInMinutes
+        address indexed creator,
+        string title,
+        string description,
+        uint fundingGoalInEthers,
+        uint durationInMinutes,
+        string thumbnail
     );
 
     constructor() public {
@@ -22,19 +24,22 @@ contract CrowdSaleApp {
         string _title,
         string _description,
         uint _fundingGoalInEthers,
-        uint _durationInMinutes
+        uint _durationInMinutes,
+        string _thumbnail
     )
     public
     returns (bool) {
-        address contractAddr = new CrowdSale(_title, _description, _fundingGoalInEthers, _durationInMinutes);
+        address contractAddr = new CrowdSale(_title, _description, _fundingGoalInEthers, _durationInMinutes, _thumbnail);
 
         emit LogCrowdSaleCreated(
+            address(this),
             contractAddr,
             msg.sender,
             _title,
             _description,
             _fundingGoalInEthers,
-            _durationInMinutes
+            _durationInMinutes,
+            _thumbnail
         );
 
         return true;

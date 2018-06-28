@@ -9,7 +9,7 @@ contract CrowdSale is usingOraclize {
     uint public fundingGoal;
     uint public amountRaised;
     uint public deadline;
-    string public price;
+    string public thumbnail;
     bool fundingGoalReached = false;
     bool crowdSaleClosed = false;
 
@@ -29,13 +29,15 @@ contract CrowdSale is usingOraclize {
         string _title,
         string _description,
         uint _fundingGoalInEthers,
-        uint _durationInMinutes
+        uint _durationInMinutes,
+        string _thumbnail
     ) public payable {
         owner = msg.sender;
         title = _title;
         description = _description;
         fundingGoal = _fundingGoalInEthers * 1 ether;
         deadline = now + _durationInMinutes * 1 minutes;
+        thumbnail = _thumbnail;
 
         OAR = OraclizeAddrResolverI(0x6f485C8BF6fc43eA212E93BBF8ce046C7f1cb475);
 
@@ -88,11 +90,11 @@ contract CrowdSale is usingOraclize {
         }
     }
 
-    function isGoalReached() view returns (bool) {
+    function isGoalReached() view public returns (bool) {
         return fundingGoalReached;
     }
 
-    function isDeadlineReached() view returns (bool) {
+    function isDeadlineReached() view public returns (bool) {
         return now > deadline;
     }
 }

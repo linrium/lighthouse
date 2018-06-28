@@ -1,11 +1,10 @@
 import React from 'react'
 import Web3 from 'web3'
-import CrowdSale from './CrowdSale/CrowdSale'
-import CrowdSaleApp from './CrowdSaleApp/CrowdSaleApp'
-import Home from './Home/Home'
 import { BrowserRouter } from 'react-router-dom'
 import { RouterContent } from './routes'
 import AppHeader from './_Components/AppHeader/AppHeader'
+import TruffleContract from 'truffle-contract'
+import CrowdSaleAppContract from '../build/contracts/CrowdSaleApp'
 
 export const AppContext = React.createContext()
 
@@ -29,6 +28,8 @@ export class App extends React.PureComponent {
 		}
 
 		this.web3 = new Web3(this.web3Provider)
+		this.crowdSaleApp = TruffleContract(CrowdSaleAppContract)
+		this.crowdSaleApp.setProvider(this.web3Provider)
 	}
 
 	componentDidMount() {
@@ -36,6 +37,20 @@ export class App extends React.PureComponent {
 			this.setState({
 				account,
 			})
+
+			this.crowdSaleApp.deployed().then((instance) => {
+				this.crowdSaleAppInstance = instance
+				this.watchEvents()
+			})
+		})
+	}
+
+	watchEvents() {
+		this.crowdSaleAppInstance.LogCrowdSaleCreated({}, {
+			fromBlock: 0,
+			toBlock: 'latest'
+		}).watch((error, logs) => {
+			console.log('allEvents', logs)
 		})
 	}
 
@@ -44,7 +59,8 @@ export class App extends React.PureComponent {
 			<AppContext.Provider value={{
 				web3: this.web3,
 				web3Provider: this.web3Provider,
-				account: this.state.account
+				account: this.state.account,
+				crowdSaleAppInstance: this.crowdSaleAppInstance
 			}}>
 				<BrowserRouter>
 					<div>

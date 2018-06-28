@@ -7,7 +7,7 @@ import {
 import AppCard from '../_Components/AppCard/AppCard'
 import AppButton from '../_Components/AppButton/AppButton'
 
-class Home extends React.PureComponent {
+class HomePage extends React.PureComponent {
 	render() {
 		return (
 			<Container>
@@ -25,4 +25,4 @@ class Home extends React.PureComponent {
 	}
 }
 
-export default Home
+export default HomePage

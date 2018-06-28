@@ -12,15 +12,10 @@ import {
 	Wrapper
 } from './ProjectStyled'
 import { Colors } from '../_Variables/Colors'
-import {
-	Deadline,
-	Funded,
-	Pledged,
-	ProgressBar
-} from '../_Components/AppCard/AppCardStyled'
+import { ProgressBar } from '../_Components/AppCard/AppCardStyled'
 import AppButton from '../_Components/AppButton/AppButton'
 
-class Project extends React.PureComponent {
+class ProjectPage extends React.PureComponent {
 	render() {
 		return (
 			<Container>
@@ -76,4 +71,4 @@ class Project extends React.PureComponent {
 	}
 }
 
-export default Project
+export default ProjectPage

@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "dotenv": "^2.0.0",
+    "ipfs-api": "^22.1.1",
     "moment": "^2.22.2",
     "react": "^16.4.1",
     "react-autosize-textarea": "^4.0.0",

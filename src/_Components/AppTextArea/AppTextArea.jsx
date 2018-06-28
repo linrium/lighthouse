@@ -10,7 +10,7 @@ class AppTextArea extends React.PureComponent {
 			<Container>
 				<TextArea
 					rows={5}
-					placeholder={this.props.placeholder}
+					{...this.props}
 				/>
 			</Container>
 		)

@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import { Images } from '../_Variables/Images'
 import { Colors } from '../_Variables/Colors'
