@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Colors } from '../../_Variables/Colors'
+import { Link } from 'react-router-dom'
 
 export const Container = styled.div`
 	background: white;
@@ -19,9 +20,11 @@ export const Logo = styled.h1`
 	display: block;
 `
 
-export const MenuItem = styled.h1`
+export const MenuItem = styled(Link)`
 	padding: 16px;
 	cursor: pointer;
+	color: ${Colors.primary};
+	text-decoration: none;
 	&:hover {
 		color: ${Colors.secondary};
 		background: ${Colors.accent};

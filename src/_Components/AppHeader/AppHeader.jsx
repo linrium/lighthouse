@@ -6,12 +6,12 @@ class AppHeader extends React.PureComponent {
 		return (
 			<Container>
 				<Logo>Lighthouse</Logo>
-				<MenuItem>Explore</MenuItem>
-				<MenuItem>Start a project</MenuItem>
-				<MenuItem>Search</MenuItem>
+				<MenuItem to="">Explore</MenuItem>
+				<MenuItem to="start">Start a project</MenuItem>
+				<MenuItem to="">Search</MenuItem>
 
-				<MenuItem style={{marginLeft: 'auto'}}>Notifications</MenuItem>
-				<MenuItem>Me</MenuItem>
+				<MenuItem to="" style={{marginLeft: 'auto'}}>Notifications</MenuItem>
+				<MenuItem to="">Me</MenuItem>
 
 			</Container>
 		)

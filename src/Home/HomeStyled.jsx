@@ -9,6 +9,13 @@ export const Container = styled.div`
 `
 
 export const Wrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+`
+
+export const ListCards = styled.div`
+	padding: 40px 0;
 	display: grid;
   /* Display as a Grid */
   grid-template-columns: repeat(3, minmax(400px, 400px));

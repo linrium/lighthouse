@@ -3,6 +3,9 @@ import Web3 from 'web3'
 import CrowdSale from './CrowdSale/CrowdSale'
 import CrowdSaleApp from './CrowdSaleApp/CrowdSaleApp'
 import Home from './Home/Home'
+import { BrowserRouter } from 'react-router-dom'
+import { RouterContent } from './routes'
+import AppHeader from './_Components/AppHeader/AppHeader'
 
 export const AppContext = React.createContext()
 
@@ -43,9 +46,12 @@ export class App extends React.PureComponent {
 				web3Provider: this.web3Provider,
 				account: this.state.account
 			}}>
-				{/*<CrowdSaleApp/>*/}
-				{/*<CrowdSale/>*/}
-				<Home/>
+				<BrowserRouter>
+					<div>
+						<AppHeader/>
+						<RouterContent/>
+					</div>
+				</BrowserRouter>
 			</AppContext.Provider>
 		)
 	}
