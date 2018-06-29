@@ -52,7 +52,9 @@ class AppCard extends React.PureComponent {
 
 	get getPledgedPercent() {
 		const {fundingGoalInEthers} = this.props.args
-		return (this.state.amountRaised / fundingGoalInEthers) * 100
+		if (fundingGoalInEthers === 0) return 0
+
+		return ((this.state.amountRaised / fundingGoalInEthers) * 100).toFixed(2)
 	}
 
 	initData = () => {
@@ -63,7 +65,7 @@ class AppCard extends React.PureComponent {
 			.then(([amountRaised, deadline]) => {
 				if(this._mouted) {
 					this.setState({
-						amountRaised: amountRaised.toNumber(),
+						amountRaised: this.props.web3.fromWei(amountRaised.toNumber(), 'ether'),
 						deadline: moment.unix(deadline).fromNow().capitalize()
 					})
 				}
@@ -88,7 +90,7 @@ class AppCard extends React.PureComponent {
 					<Title>{title}</Title>
 					<ByAuthor>by <span>Linh The Human</span></ByAuthor>
 					<ProgressBar>
-						<ProgressBar style={{width: this.getPledgedPercent}} bgColor={Colors.accent}/>
+						<ProgressBar style={{width: this.getPledgedPercent + '%'}} bgColor={Colors.accent}/>
 					</ProgressBar>
 					<Pledged>{amountRaised}/{fundingGoalInEthers.toNumber()} pledged</Pledged>
 					<Funded>{this.getPledgedPercent}% funded</Funded>

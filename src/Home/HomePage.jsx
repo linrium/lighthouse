@@ -19,6 +19,7 @@ class HomePage extends React.PureComponent {
 									const address = log.args.contractAddr
 									return (
 										<AppCard
+											web3={this.props.web3}
 											web3Provider={this.props.web3Provider}
 											args={log.args}
 											key={log.transactionHash}

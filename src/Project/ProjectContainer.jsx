@@ -41,6 +41,7 @@ class ProjectContainer extends React.PureComponent {
 				this.crowdSaleInstance = instance
 				this.initData()
 				this.getAllEvents()
+				// this.watchEvents()
 			})
 	}
 
@@ -57,7 +58,6 @@ class ProjectContainer extends React.PureComponent {
 			this.crowdSaleInstance.totalContributors()
 		])
 			.then(([amountRaised, deadline, totalContributors]) => {
-				console.log(totalContributors)
 				this.setState({
 					amountRaised: this.props.web3.fromWei(amountRaised.toNumber(), 'ether'),
 					deadline: moment.unix(deadline).fromNow().capitalize(),
@@ -73,12 +73,20 @@ class ProjectContainer extends React.PureComponent {
 			toBlock: 'latest'
 		})
 			.get((err, logs) => {
-				console.log(logs)
 				if(err) return console.error(err)
 
 				this.setState({
-					LogFundTransfer: logs
+					LogFundTransfer: logs.reverse()
 				})
+			})
+	}
+
+	watchEvents = () => {
+		this.crowdSaleInstance.allEvents({})
+			.watch((err, logs) => {
+				if(err) return console.error(err)
+
+				console.log('logs', logs)
 			})
 	}
 
@@ -88,7 +96,15 @@ class ProjectContainer extends React.PureComponent {
 			to: this.crowdSaleInstance.address,
 			value: this.props.web3.toWei(this.state.valueFund, 'ether') //optional, if you want to pay the contract Ether
 		})
-			.then(console.log)
+			.then(result => {
+				const NewLogs = result.logs.filter(log => {
+					return log.event === 'LogFundTransfer'
+				})
+
+				this.setState({
+					LogFundTransfer: NewLogs.concat(this.state.LogFundTransfer)
+				})
+			})
 			.catch(console.log)
 	}
 
@@ -96,6 +112,7 @@ class ProjectContainer extends React.PureComponent {
 		return (
 			<ProjectPage
 				{...this.state}
+				web3={this.props.web3}
 				web3Provider={this.props.web3Provider}
 				onChangeText={this.onChangeText}
 				onFund={this.onFund}

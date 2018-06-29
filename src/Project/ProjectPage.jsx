@@ -65,7 +65,7 @@ class ProjectPage extends React.PureComponent {
 									return (
 										<ListItemContainer key={log.transactionHash}>
 											<ListItem>From: {args.backer}</ListItem>
-											<ListItem>Amount: {args.amount.toNumber()}</ListItem>
+											<ListItem>ETH: {this.props.web3.fromWei(args.amount.toNumber(), 'ether')}</ListItem>
 										</ListItemContainer>
 									)
 								})

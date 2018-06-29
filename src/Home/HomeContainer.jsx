@@ -12,6 +12,7 @@ class HomeContainer extends React.PureComponent {
 				{...this.state}
 				LogCrowdSaleCreated={this.props.LogCrowdSaleCreated}
 				web3Provider={this.props.web3Provider}
+				web3={this.props.web3}
 			/>
 		)
 	}
