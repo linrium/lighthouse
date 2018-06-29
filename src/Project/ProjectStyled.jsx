@@ -60,3 +60,14 @@ export const GroupText = styled.div`
 	margin: 16px 0;
 	line-height: 30px;
 `
+
+export const ListItemContainer = styled.div`
+	padding: 8px 0;
+  border-bottom: 1px solid ${Colors.primary};
+  margin-bottom: 16px;
+  cursor: pointer;
+`
+
+export const ListItem = styled.div`
+	padding: 8px 0;
+`

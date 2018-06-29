@@ -23,6 +23,8 @@ class ProjectContainer extends React.PureComponent {
 
 	state = {
 		amountRaised: 0,
+		valueFund: 0,
+		LogFundTransfer: []
 	}
 
 	constructor(props) {
@@ -38,21 +40,56 @@ class ProjectContainer extends React.PureComponent {
 			.then(instance => {
 				this.crowdSaleInstance = instance
 				this.initData()
+				this.getAllEvents()
 			})
+	}
+
+	onChangeText = key => e => {
+		this.setState({
+			[key]: e.target.value
+		})
 	}
 
 	initData = () => {
 		Promise.all([
 			this.crowdSaleInstance.amountRaised(),
-			this.crowdSaleInstance.deadline()
+			this.crowdSaleInstance.deadline(),
+			this.crowdSaleInstance.totalContributors()
 		])
-			.then(([amountRaised, deadline]) => {
+			.then(([amountRaised, deadline, totalContributors]) => {
+				console.log(totalContributors)
 				this.setState({
-					amountRaised: amountRaised.toNumber(),
-					deadline: moment.unix(deadline).fromNow().capitalize()
+					amountRaised: this.props.web3.fromWei(amountRaised.toNumber(), 'ether'),
+					deadline: moment.unix(deadline).fromNow().capitalize(),
+					totalContributors: totalContributors.toNumber()
 				})
 			})
 			.catch(console.error)
+	}
+
+	getAllEvents = () => {
+		this.crowdSaleInstance.allEvents({
+			fromBlock: 0,
+			toBlock: 'latest'
+		})
+			.get((err, logs) => {
+				console.log(logs)
+				if(err) return console.error(err)
+
+				this.setState({
+					LogFundTransfer: logs
+				})
+			})
+	}
+
+	onFund = () => {
+		this.crowdSaleInstance.sendTransaction({
+			from: this.props.account,
+			to: this.crowdSaleInstance.address,
+			value: this.props.web3.toWei(this.state.valueFund, 'ether') //optional, if you want to pay the contract Ether
+		})
+			.then(console.log)
+			.catch(console.log)
 	}
 
 	render() {
@@ -60,6 +97,8 @@ class ProjectContainer extends React.PureComponent {
 			<ProjectPage
 				{...this.state}
 				web3Provider={this.props.web3Provider}
+				onChangeText={this.onChangeText}
+				onFund={this.onFund}
 			/>
 		)
 	}

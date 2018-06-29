@@ -3,7 +3,7 @@ import { Colors } from '../../_Variables/Colors'
 
 export const Container = styled.div`
 	margin: 16px 0;
-	width: 600px;
+	width: 100%;
 `
 
 export const Input = styled.input`

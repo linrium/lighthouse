@@ -14,9 +14,10 @@ contract CrowdSale is usingOraclize {
     bool public crowdSaleClosed = false;
 
     mapping(address => uint) public balanceOf;
+    address[] public contributors;
 
-    event GoalReached(address indexed recipient, uint totalAmountRaised);
-    event FundTransfer(address indexed backer, uint amount, bool isContribution);
+    event LogGoalReached(address indexed recipient, uint totalAmountRaised);
+    event LogFundTransfer(address indexed backer, uint amount, bool indexed isContribution);
 
     event LogNewOraclizeQuery(string description);
     event LogCallMySelf(uint totalAmountRaised, bool fundingGoalReached);
@@ -55,15 +56,27 @@ contract CrowdSale is usingOraclize {
     function() payable public {
         require(!crowdSaleClosed);
         uint amount = msg.value;
+        addContributor();
         balanceOf[msg.sender] += amount;
         amountRaised += amount;
-        emit FundTransfer(msg.sender, amount, true);
+
+        emit LogFundTransfer(msg.sender, amount, true);
+    }
+
+    function addContributor() public {
+        if(balanceOf[msg.sender] == 0) {
+            contributors.push(msg.sender);
+        }
+    }
+
+    function totalContributors() view public returns (uint) {
+        return contributors.length;
     }
 
     function checkGoalReached() public afterDeadline {
         if (amountRaised >= fundingGoal) {
             fundingGoalReached = true;
-            emit GoalReached(owner, amountRaised);
+            emit LogGoalReached(owner, amountRaised);
         }
         crowdSaleClosed = true;
     }
@@ -74,7 +87,7 @@ contract CrowdSale is usingOraclize {
             balanceOf[msg.sender] = 0;
             if (amount > 0) {
                 if (msg.sender.send(amount)) {
-                    emit FundTransfer(msg.sender, amount, false);
+                    emit LogFundTransfer(msg.sender, amount, false);
                 } else {
                     balanceOf[msg.sender] = amount;
                 }
@@ -83,7 +96,7 @@ contract CrowdSale is usingOraclize {
 
         if (fundingGoalReached && owner == msg.sender) {
             if (owner.send(amountRaised)) {
-                emit FundTransfer(owner, amountRaised, false);
+                emit LogFundTransfer(owner, amountRaised, false);
             } else {
                 fundingGoalReached = false;
             }

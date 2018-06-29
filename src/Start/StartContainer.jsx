@@ -1,8 +1,6 @@
 import React from 'react'
 import StartPage from './StartPage'
 import { withContext } from '../_API/withContext'
-import TruffleContract from 'truffle-contract'
-import CrowdSaleAppContract from '../../build/contracts/CrowdSaleApp'
 import ipfsAPI from 'ipfs-api'
 
 const ipfs = new ipfsAPI({host: 'ipfs.infura.io', port: 5001, protocol: 'https'})
