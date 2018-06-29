@@ -16,13 +16,13 @@ class HomePage extends React.PureComponent {
 						{
 							this.props.LogCrowdSaleCreated
 								.map(log => {
+									const address = log.args.contractAddr
 									return (
 										<AppCard
-											address={log.address}
 											web3Provider={this.props.web3Provider}
 											args={log.args}
 											key={log.transactionHash}
-											to={`project/${log.transactionHash}`}
+											to={`project/${address}`}
 										/>
 									)
 								})

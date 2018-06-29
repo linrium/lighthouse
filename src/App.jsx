@@ -10,9 +10,6 @@ import CrowdSaleContract from '../build/contracts/CrowdSale'
 export const AppContext = React.createContext()
 
 export class App extends React.PureComponent {
-	web3 = null
-	web3Provider = null
-
 	state = {
 		web3: null,
 		account: null,

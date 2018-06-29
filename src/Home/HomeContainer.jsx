@@ -1,9 +1,6 @@
 import React from 'react'
 import HomePage from './HomePage'
 import { withContext } from '../_API/withContext'
-import TruffleContract from 'truffle-contract'
-import CrowdSaleContract from '../../build/contracts/CrowdSale'
-
 
 class HomeContainer extends React.PureComponent {
 	// static getDerivedStateFromProps(props) {

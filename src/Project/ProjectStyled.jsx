@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
 `
 
 export const Thumbnail = styled.div`
-	background: url("${Images.thumbnail1}") no-repeat center center;
+	background: url("${props => props.value || Images.thumbnail1}") no-repeat center center;
 	background-size: 100%;
 	width: 100%;
 	height: 500px;

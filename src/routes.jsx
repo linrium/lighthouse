@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom'
 import React from 'react'
 import HomeContainer from './Home/HomeContainer'
-import ProjectPage from './Project/ProjectPage'
+import ProjectContainer from './Project/ProjectContainer'
 import StartContainer from './Start/StartContainer'
 
 export const routes = [
@@ -16,7 +16,7 @@ export const routes = [
 	{
 		path: '/project/:projectId',
 		exact: true,
-		main: () => <ProjectPage/>
+		main: () => <ProjectContainer/>
 	},
 	{
 		path: '/start',

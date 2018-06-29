@@ -16,18 +16,44 @@ import { ProgressBar } from '../_Components/AppCard/AppCardStyled'
 import AppButton from '../_Components/AppButton/AppButton'
 
 class ProjectPage extends React.PureComponent {
+	static defaultProps = {
+		amountRaised: 0,
+		LogCrowdSaleCreatedByAddr: {
+			args: {
+				fundingGoalInEthers: 0
+			}
+		}
+	}
+
+	get getPledgedPercent() {
+		const {fundingGoalInEthers} = this.props.LogCrowdSaleCreatedByAddr.args
+		if (fundingGoalInEthers === 0) return 0
+
+		return (this.props.amountRaised / fundingGoalInEthers) * 100
+	}
+
+
 	render() {
+		const {
+			creator,
+			title,
+			description,
+			fundingGoalInEthers,
+			durationInMinutes,
+			thumbnailHash
+		} = this.props.LogCrowdSaleCreatedByAddr.args
 		return (
 			<Container>
 				<Wrapper>
-					<Title>RUNVI - THE WORLD’S MOST ADVANCED DIGITAL RUNNING COACH</Title>
-					<Thumbnail/>
+					<Title>{title}</Title>
+					{
+						thumbnailHash &&
+						<Thumbnail value={`https://ipfs.io/ipfs/${thumbnailHash}`}/>
+					}
 					<InfoContainer>
 						<div style={{flex: 1}}>
 							<Label>About</Label>
-							<Description>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquam architecto asperiores
-								assumenda autem blanditiis commodi dolorem enim eum illo, labore maiores molestiae mollitia odit
-								praesentium quo quos, tempora voluptatibus.</Description>
+							<Description>{description}</Description>
 
 							<Label marginTop={50}>Backers</Label>
 							<h1>Hello</h1>
@@ -37,15 +63,15 @@ class ProjectPage extends React.PureComponent {
 							marginLeft: 32
 						}}>
 							<ProgressBar>
-								<ProgressBar width={60} bgColor={Colors.accent}/>
+								<ProgressBar style={{width: this.getPledgedPercent}} bgColor={Colors.accent}/>
 							</ProgressBar>
 							<GroupText>
-								<TextPrimary>ETH 3,600</TextPrimary>
-								<Text>pledged of ETH 655 goal</Text>
+								<TextPrimary>ETH {this.props.amountRaised}</TextPrimary>
+								<Text>pledged of ETH {fundingGoalInEthers ? fundingGoalInEthers.toNumber() : 0} goal</Text>
 							</GroupText>
 
 							<GroupText>
-								<TextPrimary>24%</TextPrimary>
+								<TextPrimary>{this.getPledgedPercent}%</TextPrimary>
 								<Text>funded</Text>
 							</GroupText>
 
@@ -55,7 +81,7 @@ class ProjectPage extends React.PureComponent {
 							</GroupText>
 
 							<GroupText>
-								<TextPrimary>35</TextPrimary>
+								<TextPrimary>{this.props.deadline}</TextPrimary>
 								<Text>days to go</Text>
 							</GroupText>
 

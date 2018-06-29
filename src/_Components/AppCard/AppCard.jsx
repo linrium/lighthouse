@@ -13,7 +13,6 @@ import {
 	Title
 } from './AppCardStyled'
 import { Colors } from '../../_Variables/Colors'
-import { clone } from 'ramda'
 import TruffleContract from 'truffle-contract'
 import CrowdSaleContract from '../../../build/contracts/CrowdSale'
 
@@ -42,8 +41,13 @@ class AppCard extends React.PureComponent {
 		this.crowdSale.at(this.props.args.contractAddr)
 			.then(instance => {
 				this.crowdSaleInstance = instance
-				this.getAmountRaised()
+				this.initData()
 			})
+		this._mouted = true
+	}
+
+	componentWillUnmount() {
+		this._mouted = false
 	}
 
 	get getPledgedPercent() {
@@ -51,16 +55,18 @@ class AppCard extends React.PureComponent {
 		return (this.state.amountRaised / fundingGoalInEthers) * 100
 	}
 
-	getAmountRaised = () => {
+	initData = () => {
 		Promise.all([
 			this.crowdSaleInstance.amountRaised(),
 			this.crowdSaleInstance.deadline()
 		])
 			.then(([amountRaised, deadline]) => {
-				this.setState({
-					amountRaised: amountRaised.toNumber(),
-					deadline: moment.unix(deadline).fromNow().capitalize()
-				})
+				if(this._mouted) {
+					this.setState({
+						amountRaised: amountRaised.toNumber(),
+						deadline: moment.unix(deadline).fromNow().capitalize()
+					})
+				}
 			})
 			.catch(console.error)
 	}
