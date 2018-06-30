@@ -1,8 +1,10 @@
-import React from 'react'
 import moment from 'moment'
+import React from 'react'
+import TruffleContract from 'truffle-contract'
+import CrowdSaleContract from '../../../build/contracts/CrowdSale'
+import { Colors } from '../../_Variables/Colors'
 import {
 	ByAuthor,
-	Category,
 	Container,
 	Deadline,
 	Funded,
@@ -12,9 +14,6 @@ import {
 	Thumbnail,
 	Title
 } from './AppCardStyled'
-import { Colors } from '../../_Variables/Colors'
-import TruffleContract from 'truffle-contract'
-import CrowdSaleContract from '../../../build/contracts/CrowdSale'
 
 class AppCard extends React.PureComponent {
 	crowdSale = null
@@ -76,11 +75,8 @@ class AppCard extends React.PureComponent {
 	render() {
 		const {amountRaised, deadline} = this.state
 		const {
-			creator,
 			title,
-			description,
 			fundingGoalInEthers,
-			durationInMinutes,
 			thumbnailHash
 		} = this.props.args
 		return (
@@ -95,7 +91,7 @@ class AppCard extends React.PureComponent {
 					<Pledged>{amountRaised}/{fundingGoalInEthers.toNumber()} pledged</Pledged>
 					<Funded>{this.getPledgedPercent}% funded</Funded>
 					<Deadline>{deadline}</Deadline>
-					<Category>Wearables</Category>
+					{/*<Category>Wearables</Category>*/}
 				</InfoContainer>
 			</Container>
 		)

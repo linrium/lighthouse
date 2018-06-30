@@ -25,14 +25,6 @@ export const Label = styled.span`
 	margin-top: 32px;
 `
 
-export const SubLabel = styled.span`
-	font-size: 18px;
-	line-height: 25px;
-	color: ${Colors.primary};
-	margin-top: 16px;
-	font-weight: 300;
-`
-
 export const DropZone = styled(Dropzone)`
     position: relative;
     width: 100%;
@@ -46,16 +38,4 @@ export const DropZone = styled(Dropzone)`
     align-items: center;
     cursor: pointer;
     overflow: hidden;
-`
-
-export const Status = styled.span`
-	color: ${Colors.accent};
-	font-size: 18px;
-`
-
-export const FormFooter = styled.div`
-	display: flex;
-	width: 100%;
-	justify-content: space-between;
-	align-items: center;
 `

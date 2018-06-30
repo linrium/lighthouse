@@ -1,12 +1,10 @@
 import React from 'react'
+import { captureFile } from '../_API/captureFile'
 import StartPage from './StartPage'
 import { withContext } from '../_API/withContext'
-import ipfsAPI from 'ipfs-api'
-
-const ipfs = new ipfsAPI({host: 'ipfs.infura.io', port: 5001, protocol: 'https'})
+import { ipfs } from '../_API/ipfsAPI'
 
 class StartContainer extends React.PureComponent {
-	crowdSaleApp = null
 	crowdSaleAppInstance = null
 
 	state = {
@@ -25,9 +23,10 @@ class StartContainer extends React.PureComponent {
 
 		ipfsHash: '',
 		buffer: null,
-		imagePreviewUrl: ''
+		imagePreviewUrl: '',
+		status: ''
 	}
-	
+
 	// static getDerivedStateFromProps(props) {
 	// 	console.log(props)
 	// }
@@ -38,29 +37,12 @@ class StartContainer extends React.PureComponent {
 		})
 	}
 
-	captureFile = files => {
-		// e.preventDefault()
-		const file = files[0]
-		const reader = new window.FileReader()
-		reader.readAsArrayBuffer(file)
-		reader.onloadend = () => {
-			this.setState({
-				buffer: Buffer(reader.result),
-			})
-		}
-
-
-		const readerURL = new window.FileReader()
-		readerURL.readAsDataURL(file)
-		readerURL.onloadend = () => {
-			this.setState({
-				imagePreviewUrl: readerURL.result
-			})
-		}
-	}
+	captureFile = captureFile(
+		(reader) => this.setState({buffer: Buffer(reader.result)}),
+		(reader) => this.setState({imagePreviewUrl: reader.result})
+	)
 
 	onCreate = () => {
-		console.log(this.state)
 		const {
 			title,
 			description,
@@ -71,36 +53,40 @@ class StartContainer extends React.PureComponent {
 		const parseFundingGoal = parseInt(fundingGoalInEthers, 10)
 		const parseDuration = parseInt(durationInMinutes, 10)
 
-		// if(!title) {
-		// 	console.error('Missing title')
-		// 	return
-		// }
-		//
-		// if(!description) {
-		// 	console.error('Missing description')
-		// 	return
-		// }
-		//
-		// if(Number.isNaN(parseFundingGoal)) {
-		// 	console.error('Funding goal must be a number')
-		// 	return
-		// }
-		//
-		// if(Number.isNaN(parseDuration)) {
-		// 	console.error('Duration must be a number')
-		// 	return
-		// }
-		//
-		// if(!this.state.buffer) {
-		// 	console.error('Please select thumbnail')
-		// 	return
-		// }
+		if (!title) {
+			this.setState({status: 'Missing title.'})
+			return
+		}
 
-		console.log('uploading')
+		if (!description) {
+			this.setState({status: 'Missing description.'})
+			return
+		}
+
+		if (Number.isNaN(parseFundingGoal)) {
+			this.setState({status: 'Funding goal must be a number.'})
+			return
+		}
+
+		if (Number.isNaN(parseDuration)) {
+			this.setState({status: 'Duration must be a number.'})
+			return
+		}
+
+		if (!this.state.buffer) {
+			console.error('Please select thumbnail')
+			return
+		}
+
+		this.setState({
+			status: 'Uploading thumbnail to IPFS.',
+			loading: true
+		})
 		ipfs.files.add(this.state.buffer, (err, result) => {
 			if (err) return console.error(err)
-			console.log('upload image succeeded', result)
-			console.log('create crowd sale')
+			this.setState({
+				status: 'Create your project.'
+			})
 
 			this.props.crowdSaleAppInstance
 				.createCrowdSale(
@@ -114,7 +100,10 @@ class StartContainer extends React.PureComponent {
 				)
 				.then(result => {
 					console.log(result)
-					console.log('create crowd sale succeeded')
+					this.setState({
+						status: 'Create your project succeeded.',
+						loading: false
+					})
 				})
 				.catch(console.error)
 		})
@@ -122,18 +111,12 @@ class StartContainer extends React.PureComponent {
 
 	render() {
 		return (
-			<div style={{marginTop: 100}}>
-				{/*<form onSubmit={this.onUploadImage}>*/}
-					{/*<input type='file' onChange={this.captureFile}/>*/}
-					{/*<input type='submit'/>*/}
-				{/*</form>*/}
-				<StartPage
-					{...this.state}
-					onChangeText={this.onChangeText}
-					onCreate={this.onCreate}
-					captureFile={this.captureFile}
-				/>
-			</div>
+			<StartPage
+				{...this.state}
+				onChangeText={this.onChangeText}
+				onCreate={this.onCreate}
+				captureFile={this.captureFile}
+			/>
 		)
 	}
 }

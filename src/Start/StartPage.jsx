@@ -1,28 +1,26 @@
 import React from 'react'
-import { DateRangePicker } from 'react-dates'
-import {
-	Container,
-	DropZone,
-	Label,
-	SubLabel,
-	Wrapper
-} from './StartStyled'
-import AppInput from '../_Components/AppInput/AppInput'
-import AppTextArea from '../_Components/AppTextArea/AppTextArea'
-import AppSelect from '../_Components/AppSelect/AppSelect'
-import AppButton from '../_Components/AppButton/AppButton'
-import countries from './countries'
 
 
 import 'react-dates/initialize'
 import 'react-dates/lib/css/_datepicker.css'
+import AppButton from '../_Components/AppButton/AppButton'
+import AppInput from '../_Components/AppInput/AppInput'
+import AppTextArea from '../_Components/AppTextArea/AppTextArea'
 import './react-dates.css'
+import {
+	Container,
+	DropZone,
+	FormFooter,
+	Label,
+	Status,
+	SubLabel,
+	Wrapper
+} from './StartStyled'
 
 class StartPage extends React.PureComponent {
 
 	render() {
 		const {
-			categories,
 			title,
 			description,
 			fundingGoalInEthers,
@@ -36,10 +34,10 @@ class StartPage extends React.PureComponent {
 		return (
 			<Container>
 				<Wrapper>
-					<Label>First, let’s get you set up.</Label>
-					<SubLabel>Pick a project category to connect with a specific community. You can always update this
-						later.</SubLabel>
-					<AppSelect data={categories}/>
+					{/*<Label>First, let’s get you set up.</Label>*/}
+					{/*<SubLabel>Pick a project category to connect with a specific community. You can always update this*/}
+						{/*later.</SubLabel>*/}
+					{/*<AppSelect data={categories}/>*/}
 
 					<Label>Enter your project name</Label>
 					<SubLabel>Be careful!!! You can't change it after create.</SubLabel>
@@ -102,16 +100,16 @@ class StartPage extends React.PureComponent {
 					{/*<SubLabel>You can't also edit this later, too.</SubLabel>*/}
 					{/*<AppSelect data={countries} idKey="code" valueKey="name"/>*/}
 
-					<div style={{
-						display: 'flex',
-						justifyContent: 'flex-end',
-						width: '100%'
-					}}>
+					<FormFooter>
+						<Status>
+							{this.props.status}
+						</Status>
 						<AppButton
 							value="Create"
 							onClick={onCreate}
+							loading={this.props.loading}
 						/>
-					</div>
+					</FormFooter>
 				</Wrapper>
 			</Container>
 		)

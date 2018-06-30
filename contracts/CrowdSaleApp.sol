@@ -4,6 +4,7 @@ import "./CrowdSale.sol";
 
 contract CrowdSaleApp {
     address public owner;
+    mapping(address => string) creators;
 
     event LogCrowdSaleCreated(
         address contractAddr,
@@ -14,6 +15,13 @@ contract CrowdSaleApp {
         uint durationInMinutes,
         string thumbnailHash
     );
+    event LogCreatorCreated(address indexed creator, string contentHash);
+
+    modifier onlyCreator() {
+        bytes memory creatorHash = bytes(creators[msg.sender]);
+        require(creatorHash.length > 0);
+        _;
+    }
 
     constructor() public {
         owner = msg.sender;
@@ -27,6 +35,7 @@ contract CrowdSaleApp {
         string _thumbnailHash
     )
     public
+    onlyCreator
     returns (bool) {
         address contractAddr = new CrowdSale(_title, _description, _fundingGoalInEthers, _durationInMinutes, _thumbnailHash);
 
@@ -41,5 +50,10 @@ contract CrowdSaleApp {
         );
 
         return true;
+    }
+
+    function createCreator(string _infoHash) public {
+        creators[msg.sender] = _infoHash;
+        emit LogCreatorCreated(msg.sender, _infoHash);
     }
 }

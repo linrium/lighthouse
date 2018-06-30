@@ -38,11 +38,9 @@ class ProjectPage extends React.PureComponent {
 
 	render() {
 		const {
-			creator,
 			title,
 			description,
 			fundingGoalInEthers,
-			durationInMinutes,
 			thumbnailHash
 		} = this.props.LogCrowdSaleCreatedByAddr.args
 		return (

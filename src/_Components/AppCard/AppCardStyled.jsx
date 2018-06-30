@@ -47,6 +47,7 @@ export const ByAuthor = styled.h3`
 `
 
 export const ProgressBar = styled.div`
+	overflow: hidden;
 	margin-bottom: 8px;
 	width: 100%;
 	height: 5px;
