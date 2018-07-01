@@ -21,6 +21,8 @@ class HomePage extends React.PureComponent {
 								web3={this.props.web3}
 								web3Provider={this.props.web3Provider}
 								data={this.props.LogCrowdSaleCreated}
+								crowdSaleAppInstance={this.props.crowdSaleAppInstance}
+								account={this.props.account}
 							/>
 					}
 					{/*<AppButton value="Load more"/>*/}

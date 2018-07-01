@@ -14,6 +14,7 @@ import {
 	Thumbnail,
 	Title
 } from './AppCardStyled'
+import axios from 'axios'
 
 class AppCard extends React.PureComponent {
 	crowdSale = null
@@ -26,7 +27,8 @@ class AppCard extends React.PureComponent {
 	}
 	
 	state = {
-		amountRaised: 0
+		amountRaised: 0,
+		creator: null
 	}
 	
 	constructor(props) {
@@ -55,17 +57,25 @@ class AppCard extends React.PureComponent {
 
 		return ((this.state.amountRaised / fundingGoalInEthers) * 100).toFixed(2)
 	}
+	
+	getCreator = (infoHash) => {
+		return axios.get(`https://ipfs.io/ipfs/${infoHash}`)
+	}
 
 	initData = () => {
 		Promise.all([
 			this.crowdSaleInstance.amountRaised(),
-			this.crowdSaleInstance.deadline()
+			this.crowdSaleInstance.deadline(),
+			this.props.crowdSaleAppInstance.creators(this.props.account)
+				.then(this.getCreator)
 		])
-			.then(([amountRaised, deadline]) => {
+			.then(([amountRaised, deadline, creator]) => {
+				console.log(creator)
 				if(this._mouted) {
 					this.setState({
 						amountRaised: this.props.web3.fromWei(amountRaised.toNumber(), 'ether'),
-						deadline: moment.unix(deadline).fromNow().capitalize()
+						deadline: moment.unix(deadline).fromNow().capitalize(),
+						creator: creator.data
 					})
 				}
 			})
@@ -73,7 +83,7 @@ class AppCard extends React.PureComponent {
 	}
 
 	render() {
-		const {amountRaised, deadline} = this.state
+		const {amountRaised, deadline, creator} = this.state
 		const {
 			title,
 			fundingGoalInEthers,
@@ -84,7 +94,10 @@ class AppCard extends React.PureComponent {
 				<Thumbnail value={`https://ipfs.io/ipfs/${thumbnailHash}`}/>
 				<InfoContainer>
 					<Title>{title}</Title>
-					<ByAuthor>by <span>Linh The Human</span></ByAuthor>
+					{
+						creator &&
+						<ByAuthor>by <span>{creator.username}</span></ByAuthor>
+					}
 					<ProgressBar>
 						<ProgressBar style={{width: this.getPledgedPercent + '%'}} bgColor={Colors.accent}/>
 					</ProgressBar>

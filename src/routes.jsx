@@ -1,13 +1,14 @@
+import React from 'react'
 import {
 	Route,
 	Switch
 } from 'react-router-dom'
-import React from 'react'
 import HomeContainer from './Home/HomeContainer'
+import MyProjectContainer from './MyProject/MyProjectContainer'
 import ProjectContainer from './Project/ProjectContainer'
-import StartContainer from './Start/StartContainer'
 import SignUpContainer from './SignUp/SignUpContainer'
-import UserContainer from './User/UserContainer'
+import StartContainer from './Start/StartContainer'
+import TransactionContainer from './Transaction/TransactionContainer'
 
 export const routes = [
 	{
@@ -34,6 +35,16 @@ export const routes = [
 		path: '/user/:userId',
 		exact: true,
 		main: () => <SignUpContainer/>
+	},
+	{
+		path: '/user/:userId/transactions',
+		exact: true,
+		main: () => <TransactionContainer/>
+	},
+	{
+		path: '/user/:userId/projects',
+		exact: true,
+		main: () => <MyProjectContainer/>
 	},
 ]
 

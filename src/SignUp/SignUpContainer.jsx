@@ -23,7 +23,7 @@ class SignUpContainer extends React.PureComponent {
 		imagePreviewUrl: '',
 		status: '',
 		loading: false,
-		error: false
+		error: false,
 	}
 
 	constructor(props) {
@@ -41,6 +41,10 @@ class SignUpContainer extends React.PureComponent {
 					.catch(console.log)
 			}
 		})
+	}
+
+	get isUserPage() {
+		return this.props.match.path === '/user/:userId'
 	}
 
 	getUserInfo = (id) => {
@@ -135,9 +139,11 @@ class SignUpContainer extends React.PureComponent {
 		return (
 			<SignUpPage
 				{...this.state}
+				account={this.props.account}
 				onChangeText={this.onChangeText}
 				captureFile={this.captureFile}
 				onCreate={this.onCreate}
+				isUserPage={this.isUserPage}
 			/>
 		)
 	}

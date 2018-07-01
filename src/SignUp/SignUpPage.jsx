@@ -11,6 +11,7 @@ import {
 	Container,
 	DropZone,
 	Label,
+	MenuItem,
 	Wrapper
 } from './SignUpStyled'
 
@@ -25,11 +26,27 @@ class SignUpPage extends React.PureComponent {
 			imagePreviewUrl,
 
 			onChangeText,
-			onCreate
+			onCreate,
+
+			account
 		} = this.props
 
 		return (
 			<Container>
+				{
+					this.props.isUserPage &&
+					<Wrapper style={{
+						width: 200,
+						fontSize: 20,
+						marginTop: 64,
+						marginRight: 16,
+						overflow: 'hidden'
+					}}>
+						<MenuItem to={`${account}`}>User Info</MenuItem>
+						<MenuItem to={`${account}/transactions`}>Transactions</MenuItem>
+						<MenuItem to={`${account}/projects`}>My Projects</MenuItem>
+					</Wrapper>
+				}
 				<Wrapper>
 					<Label>Username</Label>
 					<AppInput
@@ -76,7 +93,7 @@ class SignUpPage extends React.PureComponent {
 							{this.props.status}
 						</Status>
 						<AppButton
-							value="Create"
+							value={this.props.isUserPage ? 'Update' : 'Create'}
 							onClick={onCreate}
 							loading={this.props.loading}
 						/>
