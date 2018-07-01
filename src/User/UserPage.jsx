@@ -6,10 +6,16 @@ import {
 
 class UserPage extends React.PureComponent {
 	render() {
+		const {user} = this.props
 		return (
 			<Container>
 				<Wrapper>
-					<h1>Hello</h1>
+					<div>
+						<p>{user.username}</p>
+						<p>{user.email}</p>
+						<p>{user.address}</p>
+						<p>{user.biography}</p>
+					</div>
 				</Wrapper>
 			</Container>
 		)

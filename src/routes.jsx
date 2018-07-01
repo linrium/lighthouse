@@ -33,7 +33,7 @@ export const routes = [
 	{
 		path: '/user/:userId',
 		exact: true,
-		main: () => <UserContainer/>
+		main: () => <SignUpContainer/>
 	},
 ]
 

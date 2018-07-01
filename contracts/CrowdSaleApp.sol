@@ -4,7 +4,7 @@ import "./CrowdSale.sol";
 
 contract CrowdSaleApp {
     address public owner;
-    mapping(address => string) creators;
+    mapping(address => string) public creators;
 
     event LogCrowdSaleCreated(
         address contractAddr,

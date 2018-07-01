@@ -13,6 +13,8 @@ export const Container = styled.div`
 	font-weight: 300;
 	border-bottom: 1px solid ${Colors.primary};
 	z-index: 1000;
+	height: 50px;
+  align-items: center;
 `
 
 export const Logo = styled.h1`
@@ -21,12 +23,25 @@ export const Logo = styled.h1`
 `
 
 export const MenuItem = styled(Link)`
-	padding: 16px;
+	padding: 0 16px;
 	cursor: pointer;
 	color: ${Colors.primary};
 	text-decoration: none;
+	display: flex;
+	align-items: center;
+	height: 100%;
 	&:hover {
 		color: ${Colors.secondary};
 		background: ${Colors.accent};
 	}
+`
+
+export const Avatar = styled.div`
+	background: url("${props => props.bgImage}") no-repeat center center;
+	background-size: cover;
+	height: 35px;
+  width: 35px;
+  margin: 0 16px;
+  border-radius: 50%;
+}
 `

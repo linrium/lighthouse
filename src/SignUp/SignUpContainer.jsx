@@ -1,23 +1,57 @@
+import axios from 'axios'
 import React from 'react'
+import { withRouter } from 'react-router-dom'
+import TruffleContract from 'truffle-contract'
+import CrowdSaleAppContract from '../../build/contracts/CrowdSaleApp'
 import { captureFile } from '../_API/captureFile'
-import SignUpPage from './SignUpPage'
-import { withContext } from '../_API/withContext'
 import { ipfs } from '../_API/ipfsAPI'
+import { withContext } from '../_API/withContext'
+import SignUpPage from './SignUpPage'
 
 class SignUpContainer extends React.PureComponent {
 	// static getDerivedStateFromProps(props) {
 	// 	console.log(props)
 	// }
 	state = {
-		username: 'linh',
-		email: 'linh@gmail.com',
-		address: 'HCM VN',
-		biography: 'Hello world',
+		username: '',
+		email: '',
+		address: '',
+		biography: '',
 
 		buffer: '',
 		imagePreviewUrl: '',
 		status: '',
 		loading: false
+	}
+
+	constructor(props) {
+		super(props)
+		this.crowdSaleApp = TruffleContract(CrowdSaleAppContract)
+		this.crowdSaleApp.setProvider(this.props.web3Provider)
+	}
+
+	componentDidMount() {
+		this.crowdSaleApp.deployed().then((crowdSaleAppInstance) => {
+			const userId = this.props.match.params.userId
+			if (userId) {
+				crowdSaleAppInstance.creators(userId)
+					.then(id => this.getUserInfo(id))
+					.catch(console.log)
+			}
+		})
+	}
+
+	getUserInfo = (id) => {
+		axios
+			.get(`https://ipfs.io/ipfs/${id}`)
+			.then(result => {
+				console.log(result)
+				this.setState({
+					...result.data,
+					imagePreviewUrl: `https://ipfs.io/ipfs/${result.data.avatarHash}`
+				})
+			})
+			.catch(console.log)
 	}
 
 	onChangeText = key => e => {
@@ -35,7 +69,7 @@ class SignUpContainer extends React.PureComponent {
 		return new Promise((resolve, reject) => {
 			ipfs.files.add(this.state.buffer, (err, result) => {
 				if (err) reject(err)
-
+				
 				resolve(result)
 			})
 		})
@@ -67,7 +101,8 @@ class SignUpContainer extends React.PureComponent {
 		this.uploadAvatar()
 			.then(result => {
 				this.setState({status: 'Uploading user info'})
-				return this.uploadInfo({avatarHash: result.hash})
+				console.log(result)
+				return this.uploadInfo({avatarHash: result[0].hash})
 			})
 			.then(result => {
 				this.setState({
@@ -78,7 +113,6 @@ class SignUpContainer extends React.PureComponent {
 					.createCreator(result[0].hash, {from: this.props.account})
 			})
 			.then(val => {
-				console.log(val)
 				this.setState({
 					loading: false
 				})
@@ -104,4 +138,5 @@ export default withContext([
 	'web3',
 	'account',
 	'crowdSaleAppInstance',
-])(SignUpContainer)
+	'web3Provider'
+])(withRouter(SignUpContainer))
