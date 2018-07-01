@@ -72,7 +72,7 @@ class SignUpPage extends React.PureComponent {
 					</DropZone>
 
 					<FormFooter>
-						<Status>
+						<Status error={this.props.error}>
 							{this.props.status}
 						</Status>
 						<AppButton

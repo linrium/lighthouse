@@ -17,11 +17,13 @@ class SignUpContainer extends React.PureComponent {
 		email: '',
 		address: '',
 		biography: '',
+		avatarHash: '',
 
 		buffer: '',
 		imagePreviewUrl: '',
 		status: '',
-		loading: false
+		loading: false,
+		error: false
 	}
 
 	constructor(props) {
@@ -66,6 +68,9 @@ class SignUpContainer extends React.PureComponent {
 	)
 
 	uploadAvatar = () => {
+		if(!this.state.buffer) {
+			return Promise.resolve()
+		}
 		return new Promise((resolve, reject) => {
 			ipfs.files.add(this.state.buffer, (err, result) => {
 				if (err) reject(err)
@@ -75,7 +80,7 @@ class SignUpContainer extends React.PureComponent {
 		})
 	}
 
-	uploadInfo = (data) => {
+	uploadInfo = (data = {}) => {
 		return new Promise((resolve, reject) => {
 			const {username, email, address, biography} = this.state
 			const content = Buffer(JSON.stringify({
@@ -96,13 +101,13 @@ class SignUpContainer extends React.PureComponent {
 	onCreate = () => {
 		this.setState({
 			status: 'Uploading avatar',
-			loading: true
+			loading: true,
+			error: false
 		})
 		this.uploadAvatar()
 			.then(result => {
 				this.setState({status: 'Uploading user info'})
-				console.log(result)
-				return this.uploadInfo({avatarHash: result[0].hash})
+				return this.uploadInfo({avatarHash: result ? result[0].hash : this.state.avatarHash})
 			})
 			.then(result => {
 				this.setState({
@@ -118,7 +123,11 @@ class SignUpContainer extends React.PureComponent {
 				})
 			})
 			.catch(err => {
-				this.setState({status: err.message})
+				this.setState({
+					status: err.message,
+					error: true,
+					loading: false
+				})
 			})
 	}
 

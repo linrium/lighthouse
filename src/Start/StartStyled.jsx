@@ -49,7 +49,7 @@ export const DropZone = styled(Dropzone)`
 `
 
 export const Status = styled.span`
-	color: ${Colors.accent};
+	color: ${props => props.error ? Colors.danger : Colors.accent};
 	font-size: 18px;
 `
 
