@@ -57,7 +57,10 @@ export class App extends React.PureComponent {
 
 					return crowdSaleAppInstance.creators(account)
 				})
-				.then(id => this.getUserInfo(id))
+				.then(id => {
+					console.log(id)
+					this.getUserInfo(id)
+				})
 				.catch(console.log)
 		})
 	}
@@ -78,6 +81,7 @@ export class App extends React.PureComponent {
 	}
 
 	getUserInfo = (id) => {
+		if(!id) return null
 		axios
 			.get(`https://ipfs.io/ipfs/${id}`)
 			.then(result => {

@@ -13,7 +13,6 @@ class AppHeader extends React.PureComponent {
 			currentCreator,
 			account
 		} = this.props
-		console.log(currentCreator.imagePreviewUrl)
 		return (
 			<Container>
 				<Logo>Lighthouse</Logo>

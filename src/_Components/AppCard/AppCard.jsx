@@ -39,6 +39,7 @@ class AppCard extends React.PureComponent {
 	}
 
 	componentDidMount() {
+		console.log(this.props)
 		this.crowdSale.at(this.props.args.contractAddr)
 			.then(instance => {
 				this.crowdSaleInstance = instance
@@ -66,7 +67,7 @@ class AppCard extends React.PureComponent {
 		Promise.all([
 			this.crowdSaleInstance.amountRaised(),
 			this.crowdSaleInstance.deadline(),
-			this.props.crowdSaleAppInstance.creators(this.props.account)
+			this.props.crowdSaleAppInstance.creators(this.props.args.creator)
 				.then(this.getCreator)
 		])
 			.then(([amountRaised, deadline, creator]) => {
@@ -96,7 +97,9 @@ class AppCard extends React.PureComponent {
 					<Title>{title}</Title>
 					{
 						creator &&
-						<ByAuthor>by <span>{creator.username}</span></ByAuthor>
+						<ByAuthor>
+							<span>by <span>{creator.username}</span></span>
+						</ByAuthor>
 					}
 					<ProgressBar>
 						<ProgressBar style={{width: this.getPledgedPercent + '%'}} bgColor={Colors.accent}/>

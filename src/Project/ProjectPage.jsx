@@ -1,4 +1,8 @@
 import React from 'react'
+import AppButton from '../_Components/AppButton/AppButton'
+import { ProgressBar } from '../_Components/AppCard/AppCardStyled'
+import AppInput from '../_Components/AppInput/AppInput'
+import { Colors } from '../_Variables/Colors'
 import {
 	Container,
 	Description,
@@ -13,10 +17,6 @@ import {
 	Title,
 	Wrapper
 } from './ProjectStyled'
-import { Colors } from '../_Variables/Colors'
-import { ProgressBar } from '../_Components/AppCard/AppCardStyled'
-import AppButton from '../_Components/AppButton/AppButton'
-import AppInput from '../_Components/AppInput/AppInput'
 
 class ProjectPage extends React.PureComponent {
 	static defaultProps = {
@@ -35,7 +35,6 @@ class ProjectPage extends React.PureComponent {
 		return ((this.props.amountRaised / fundingGoalInEthers.toNumber()) * 100).toFixed(2)
 	}
 
-
 	render() {
 		const {
 			title,
@@ -46,6 +45,7 @@ class ProjectPage extends React.PureComponent {
 		return (
 			<Container>
 				<Wrapper>
+					{/*<Avatar bgImage={`https://ipfs.io/ipfs/${}`}/>*/}
 					<Title>{title}</Title>
 					{
 						thumbnailHash &&

@@ -1,9 +1,11 @@
+import axios from 'axios/index'
 import React from 'react'
 import { withContext } from '../_API/withContext'
 import ProjectPage from './ProjectPage'
 import moment from 'moment/moment'
 import TruffleContract from 'truffle-contract'
 import CrowdSaleContract from '../../build/contracts/CrowdSale'
+import CrowdSaleAppContract from '../../build/contracts/CrowdSaleApp'
 import { withRouter } from 'react-router-dom'
 import { pathOr } from 'ramda'
 
@@ -32,6 +34,9 @@ class ProjectContainer extends React.PureComponent {
 
 		this.crowdSale = TruffleContract(CrowdSaleContract)
 		this.crowdSale.setProvider(this.props.web3Provider)
+
+		this.crowdSaleApp = TruffleContract(CrowdSaleAppContract)
+		this.crowdSaleApp.setProvider(props.web3Provider)
 	}
 
 	componentDidMount() {
@@ -43,6 +48,37 @@ class ProjectContainer extends React.PureComponent {
 				this.getAllEvents()
 				// this.watchEvents()
 			})
+
+		// this.props.web3.eth.getCoinbase((err, account) => {
+		// 	this.crowdSaleApp.deployed()
+		// 		.then((crowdSaleAppInstance) => {
+		// 			this.setState({
+		// 				account,
+		// 				crowdSaleAppInstance
+		// 			})
+		// 			return crowdSaleAppInstance.creators(projectId)
+		// 		})
+		// 		.then(this.getCreator)
+		// 		.then(result => {
+		// 			console.log(result)
+		// 		})
+		// 		.catch(console.log)
+		// })
+	}
+
+	componentDidUpdate() {
+		console.log(this.state.LogCrowdSaleCreatedByAddr)
+		if (
+			this.state.LogCrowdSaleCreatedByAddr &&
+			this.isLoaded
+		) {
+			console.log(this.props)
+			this.isLoaded = true
+		}
+	}
+
+	getCreator = (infoHash) => {
+		return axios.get(`https://ipfs.io/ipfs/${infoHash}`)
 	}
 
 	onChangeText = key => e => {
@@ -73,7 +109,7 @@ class ProjectContainer extends React.PureComponent {
 			toBlock: 'latest'
 		})
 			.get((err, logs) => {
-				if(err) return console.error(err)
+				if (err) return console.error(err)
 
 				this.setState({
 					LogFundTransfer: logs.reverse()
@@ -84,7 +120,7 @@ class ProjectContainer extends React.PureComponent {
 	watchEvents = () => {
 		this.crowdSaleInstance.allEvents({})
 			.watch((err, logs) => {
-				if(err) return console.error(err)
+				if (err) return console.error(err)
 
 				console.log('logs', logs)
 			})
@@ -125,5 +161,6 @@ export default withContext([
 	'web3',
 	'account',
 	'web3Provider',
-	'LogCrowdSaleCreated'
+	'LogCrowdSaleCreated',
+	'crowdSaleAppInstance'
 ])(withRouter(ProjectContainer))

@@ -35,6 +35,8 @@ class SignUpContainer extends React.PureComponent {
 	componentDidMount() {
 		this.crowdSaleApp.deployed().then((crowdSaleAppInstance) => {
 			const userId = this.props.match.params.userId
+			this.crowdSaleAppInstance = crowdSaleAppInstance
+
 			if (userId) {
 				crowdSaleAppInstance.creators(userId)
 					.then(id => this.getUserInfo(id))
@@ -114,11 +116,13 @@ class SignUpContainer extends React.PureComponent {
 				return this.uploadInfo({avatarHash: result ? result[0].hash : this.state.avatarHash})
 			})
 			.then(result => {
+				
+				console.log(result)
 				this.setState({
 					status: 'Uploading user info completed',
 				})
 
-				return this.props.crowdSaleAppInstance
+				return this.crowdSaleAppInstance
 					.createCreator(result[0].hash, {from: this.props.account})
 			})
 			.then(val => {

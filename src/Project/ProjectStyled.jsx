@@ -71,3 +71,13 @@ export const ListItemContainer = styled.div`
 export const ListItem = styled.div`
 	padding: 8px 0;
 `
+
+export const Avatar = styled.div`
+	background: url("${props => props.bgImage}") no-repeat center center;
+	background-size: cover;
+	height: 35px;
+  width: 35px;
+  margin: 0 16px;
+  border-radius: 50%;
+}
+`
