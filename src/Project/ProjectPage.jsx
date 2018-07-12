@@ -4,6 +4,7 @@ import { ProgressBar } from '../_Components/AppCard/AppCardStyled'
 import AppInput from '../_Components/AppInput/AppInput'
 import { Colors } from '../_Variables/Colors'
 import {
+	Avatar,
 	Container,
 	Description,
 	GroupText,
@@ -45,7 +46,7 @@ class ProjectPage extends React.PureComponent {
 		return (
 			<Container>
 				<Wrapper>
-					{/*<Avatar bgImage={`https://ipfs.io/ipfs/${}`}/>*/}
+					<Avatar bgImage={`https://ipfs.io/ipfs/QmR94xySvsTr4MPFBXKzeMf1h2qkmAEKi3tTZpHMgsY8qF`}/>
 					<Title>{title}</Title>
 					{
 						thumbnailHash &&

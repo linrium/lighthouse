@@ -116,8 +116,6 @@ class SignUpContainer extends React.PureComponent {
 				return this.uploadInfo({avatarHash: result ? result[0].hash : this.state.avatarHash})
 			})
 			.then(result => {
-				
-				console.log(result)
 				this.setState({
 					status: 'Uploading user info completed',
 				})

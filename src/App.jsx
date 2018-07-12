@@ -141,7 +141,8 @@ export class App extends React.PureComponent {
 				account: this.state.account,
 				crowdSaleAppInstance: this.state.crowdSaleAppInstance,
 				LogCrowdSaleCreated: this.state.LogCrowdSaleCreated,
-				currentCreator: this.state.currentCreator
+				currentCreator: this.state.currentCreator,
+				onUpdateUser: currentCreator => this.setState({currentCreator})
 			}}>
 				<BrowserRouter>
 					<div>
