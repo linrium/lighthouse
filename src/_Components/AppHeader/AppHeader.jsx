@@ -42,8 +42,14 @@ class AppHeader extends React.PureComponent {
 
 				{/*<MenuItem to="" style={{marginLeft: 'auto'}}>10 Notifications</MenuItem>*/}
 				<MenuItem
-					to={`/user/${account}`}
+					to={`/user/${account}/projects`}
+					show={this.isAuth}
 					style={{marginLeft: 'auto'}}
+				>
+					My projects
+				</MenuItem>
+				<MenuItem
+					to={`/user/${account}`}
 					show={this.isAuth}
 				>
 					{currentCreator.username}

@@ -107,6 +107,8 @@ class StartContainer extends React.PureComponent {
 						status: 'Create your project succeeded.',
 						loading: false
 					})
+
+					location.reload()
 				})
 				.catch(console.error)
 		})

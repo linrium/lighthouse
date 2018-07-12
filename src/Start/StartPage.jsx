@@ -37,10 +37,10 @@ class StartPage extends React.PureComponent {
 		return (
 			<Container>
 				<Wrapper>
-					<Label>First, let’s get you set up.</Label>
+					{/*<Label>First, let’s get you set up.</Label>*/}
 					{/*<SubLabel>Pick a project category to connect with a specific community. You can always update this*/}
 					{/*later.</SubLabel>*/}
-					<AppSelect data={this.props.categories}/>
+					{/*<AppSelect data={this.props.categories}/>*/}
 
 					<Label>Enter your project name</Label>
 					{/*<SubLabel>Be careful!!! You can't change it after create.</SubLabel>*/}
@@ -74,16 +74,16 @@ class StartPage extends React.PureComponent {
 						onChange={onChangeText('durationInMinutes')}
 					/>
 
-					<Label>When is the project end?</Label>
-					<DateRangePicker
-						startDate={this.props.startDate} // momentPropTypes.momentObj or null,
-						startDateId="startDate" // PropTypes.string.isRequired,
-						endDate={this.props.endDate} // momentPropTypes.momentObj or null,
-						endDateId="endDate" // PropTypes.string.isRequired,
-						onDatesChange={this.props.onDatesChange} // PropTypes.func.isRequired,
-						focusedInput={this.props.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-						onFocusChange={this.props.onFocusChange} // PropTypes.func.isRequired,
-					/>
+					{/*<Label>When is the project end?</Label>*/}
+					{/*<DateRangePicker*/}
+						{/*startDate={this.props.startDate} // momentPropTypes.momentObj or null,*/}
+						{/*startDateId="startDate" // PropTypes.string.isRequired,*/}
+						{/*endDate={this.props.endDate} // momentPropTypes.momentObj or null,*/}
+						{/*endDateId="endDate" // PropTypes.string.isRequired,*/}
+						{/*onDatesChange={this.props.onDatesChange} // PropTypes.func.isRequired,*/}
+						{/*focusedInput={this.props.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,*/}
+						{/*onFocusChange={this.props.onFocusChange} // PropTypes.func.isRequired,*/}
+					{/*/>*/}
 
 					<Label>Add thumbnail</Label>
 					{/*<SubLabel>Be careful !!! You can't change it after create.</SubLabel>*/}

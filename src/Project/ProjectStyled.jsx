@@ -84,3 +84,10 @@ export const Avatar = styled.div`
   border-radius: 50%;
 }
 `
+
+export const UserInfoContainer = styled.div`
+	display: flex;
+	padding: 20px;
+	align-items: center;
+	cursor: pointer;
+`

@@ -16,6 +16,7 @@ import {
 	TextPrimary,
 	Thumbnail,
 	Title,
+	UserInfoContainer,
 	Wrapper
 } from './ProjectStyled'
 
@@ -41,12 +42,24 @@ class ProjectPage extends React.PureComponent {
 			title,
 			description,
 			fundingGoalInEthers,
-			thumbnailHash
+			thumbnailHash,
 		} = this.props.LogCrowdSaleCreatedByAddr.args
+		const {creator} = this.props
+		console.log(creator)
 		return (
 			<Container>
 				<Wrapper>
-					<Avatar bgImage={`https://ipfs.io/ipfs/QmR94xySvsTr4MPFBXKzeMf1h2qkmAEKi3tTZpHMgsY8qF`}/>
+					{
+						Object.keys(creator).length > 0 &&
+						<UserInfoContainer>
+							<Avatar bgImage={`https://ipfs.io/ipfs/${creator.avatarHash}`}/>
+							<div>
+								<p>{creator.username}</p>
+								<p>{creator.email}</p>
+							</div>
+						</UserInfoContainer>
+					}
+
 					<Title>{title}</Title>
 					{
 						thumbnailHash &&

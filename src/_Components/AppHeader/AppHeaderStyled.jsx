@@ -20,6 +20,7 @@ export const Container = styled.div`
 export const Logo = styled.h1`
 	padding: 16px;
 	display: block;
+	text-transform: uppercase;
 `
 
 export const MenuItem = styled(Link)`

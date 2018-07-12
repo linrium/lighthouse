@@ -26,7 +26,8 @@ class ProjectContainer extends React.PureComponent {
 	state = {
 		amountRaised: 0,
 		valueFund: 0,
-		LogFundTransfer: []
+		LogFundTransfer: [],
+		creator: {}
 	}
 
 	constructor(props) {
@@ -48,36 +49,37 @@ class ProjectContainer extends React.PureComponent {
 				this.getAllEvents()
 				// this.watchEvents()
 			})
-
-		// this.props.web3.eth.getCoinbase((err, account) => {
-		// 	this.crowdSaleApp.deployed()
-		// 		.then((crowdSaleAppInstance) => {
-		// 			this.setState({
-		// 				account,
-		// 				crowdSaleAppInstance
-		// 			})
-		// 			return crowdSaleAppInstance.creators(projectId)
-		// 		})
-		// 		.then(this.getCreator)
-		// 		.then(result => {
-		// 			console.log(result)
-		// 		})
-		// 		.catch(console.log)
-		// })
 	}
 
 	componentDidUpdate() {
-		console.log(this.state.LogCrowdSaleCreatedByAddr)
 		if (
 			this.state.LogCrowdSaleCreatedByAddr &&
-			this.isLoaded
+			!this.isLoaded
 		) {
 			console.log(this.props)
+
+			this.crowdSaleApp.deployed()
+				.then((crowdSaleAppInstance) => {
+					this.setState({
+						crowdSaleAppInstance
+					})
+					const creatorId = this.state.LogCrowdSaleCreatedByAddr.args.creator
+					return crowdSaleAppInstance.creators(creatorId)
+				})
+				.then(this.getCreator)
+				.then(result => {
+					console.log('result', result)
+					this.setState({
+						creator: result.data
+					})
+				})
+				.catch(console.log)
 			this.isLoaded = true
 		}
 	}
 
 	getCreator = (infoHash) => {
+		if(!infoHash) return
 		return axios.get(`https://ipfs.io/ipfs/${infoHash}`)
 	}
 

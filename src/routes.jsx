@@ -44,7 +44,7 @@ export const routes = [
 	{
 		path: '/user/:userId/projects',
 		exact: true,
-		main: () => <MyProjectContainer/>
+		main: () => <HomeContainer/>
 	},
 ]
 

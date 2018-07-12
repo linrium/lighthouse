@@ -16,7 +16,7 @@ export const HomeListCards = ({data, web3, web3Provider, account, crowdSaleAppIn
 							web3Provider={web3Provider}
 							args={log.args}
 							key={log.transactionHash}
-							to={`project/${address}`}
+							to={`/project/${address}`}
 						/>
 					)
 				})

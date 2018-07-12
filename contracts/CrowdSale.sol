@@ -1,8 +1,8 @@
 pragma solidity ^0.4.20;
 
-import "./oraclizeAPI.sol";
+//import "./oraclizeAPI.sol";
 
-contract CrowdSale is usingOraclize {
+contract CrowdSale {
     address public owner;
     string public title;
     string public description;
@@ -40,18 +40,18 @@ contract CrowdSale is usingOraclize {
         deadline = now + _durationInMinutes * 1 minutes;
         thumbnail = _thumbnail;
 
-        OAR = OraclizeAddrResolverI(0x6f485C8BF6fc43eA212E93BBF8ce046C7f1cb475);
+//        OAR = OraclizeAddrResolverI(0x6f485C8BF6fc43eA212E93BBF8ce046C7f1cb475);
 
-        uint durationInSeconds = deadline * 1 seconds;
-        oraclize_query(durationInSeconds, "URL", "");
+//        uint durationInSeconds = deadline * 1 seconds;
+//        oraclize_query(durationInSeconds, "URL", "");
     }
 
-    function __callback(bytes32 myId, string result) payable public {
-        if (msg.sender != oraclize_cbAddress()) revert();
-        myId;
-        emit LogCallMySelf(amountRaised, fundingGoalReached);
-        result;
-    }
+//    function __callback(bytes32 myId, string result) payable public {
+//        if (msg.sender != oraclize_cbAddress()) revert();
+//        myId;
+//        emit LogCallMySelf(amountRaised, fundingGoalReached);
+//        result;
+//    }
 
     function() payable public {
         require(!crowdSaleClosed);

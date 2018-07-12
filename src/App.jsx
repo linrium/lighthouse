@@ -53,7 +53,6 @@ export class App extends React.PureComponent {
 
 	componentDidMount() {
 		this.web3.eth.getCoinbase((err, account) => {
-
 			this.crowdSaleApp.deployed()
 				.then((crowdSaleAppInstance) => {
 					this.setState({
@@ -78,7 +77,7 @@ export class App extends React.PureComponent {
 		if (account !== this.state.account) {
 			this.setState({account}, () => {
 				const isReload = confirm('You changed account. Do you want to reload this website.')
-				if(isReload) {
+				if (isReload) {
 					location.replace('http://localhost:3000')
 					location.reload()
 				} else {
@@ -89,14 +88,11 @@ export class App extends React.PureComponent {
 	}
 
 	watchEvents(filter = {}) {
-		const {
-			crowdSaleAppInstance,
-		} = this.state
-		crowdSaleAppInstance.LogCrowdSaleCreated(filter, {
+		this.state.crowdSaleAppInstance.LogCrowdSaleCreated(filter, {
 			fromBlock: 0,
 			toBlock: 'latest'
 		}).get((error, logs) => {
-			// console.log('allEvents', logs)
+			console.log('allEvents', logs)
 			this.setState({
 				LogCrowdSaleCreated: logs
 			})

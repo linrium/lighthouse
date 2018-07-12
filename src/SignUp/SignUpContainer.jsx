@@ -135,6 +135,9 @@ class SignUpContainer extends React.PureComponent {
 					loading: false
 				})
 			})
+			.then(() => {
+				location.reload()
+			})
 	}
 
 	render() {
