@@ -33,20 +33,20 @@ class SignUpPage extends React.PureComponent {
 
 		return (
 			<Container>
-				{
-					this.props.isUserPage &&
-					<Wrapper style={{
-						width: 200,
-						fontSize: 20,
-						marginTop: 64,
-						marginRight: 16,
-						overflow: 'hidden'
-					}}>
-						<MenuItem to={`${account}`}>User Info</MenuItem>
-						<MenuItem to={`${account}/transactions`}>Transactions</MenuItem>
-						<MenuItem to={`${account}/projects`}>My Projects</MenuItem>
-					</Wrapper>
-				}
+				{/*{*/}
+					{/*this.props.isUserPage &&*/}
+					{/*<Wrapper style={{*/}
+						{/*width: 200,*/}
+						{/*fontSize: 20,*/}
+						{/*marginTop: 64,*/}
+						{/*marginRight: 16,*/}
+						{/*overflow: 'hidden'*/}
+					{/*}}>*/}
+						{/*<MenuItem to={`${account}`}>User Info</MenuItem>*/}
+						{/*<MenuItem to={`${account}/transactions`}>Transactions</MenuItem>*/}
+						{/*<MenuItem to={`${account}/projects`}>My Projects</MenuItem>*/}
+					{/*</Wrapper>*/}
+				{/*}*/}
 				<Wrapper>
 					<Label>Username</Label>
 					<AppInput

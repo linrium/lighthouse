@@ -10,8 +10,9 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
 	width: 1024px;
-	margin-top: 49px;
-	padding: 40px 0;
+  margin: 100px 0;
+  background: white;
+  box-shadow: -1px 5px 14px 0px #8e858559;
 `
 
 export const Thumbnail = styled.div`
@@ -25,6 +26,7 @@ export const Title = styled.h2`
 	font-size: 32px;
 	line-height: 25px;
 	margin: 20px 0;
+	padding: 0 40px;
 	&:hover {
 		color: ${Colors.accent}
 	}
@@ -45,6 +47,7 @@ export const InfoContainer = styled.div`
 	margin: 20px 0;
 	display: flex;
 	justify-content: space-between;
+	padding: 0 40px;
 `
 
 export const TextPrimary = styled.h4`

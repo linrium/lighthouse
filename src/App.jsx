@@ -5,6 +5,9 @@ import TruffleContract from 'truffle-contract'
 import Web3 from 'web3'
 import CrowdSaleAppContract from '../build/contracts/CrowdSaleApp'
 import AppHeader from './_Components/AppHeader/AppHeader'
+import {
+	BackgroundImage,
+} from './AppStyled'
 import { RouterContent } from './routes'
 
 export const AppContext = React.createContext()
@@ -27,25 +30,30 @@ export class App extends React.PureComponent {
 		this.crowdSaleApp = TruffleContract(CrowdSaleAppContract)
 		this.crowdSaleApp.setProvider(this.web3Provider)
 
+
 		this.state = {
-			web3: null,
 			account: null,
 			crowdSaleInstance: null,
 			crowdSaleAppInstance: null,
 
 			LogCrowdSaleCreated: [],
 			isInstalledMeta,
-			currentCreator: {
-				username: '',
-				email: '',
-				address: '',
-				biography: ''
-			}
+			currentCreator: this.defaultCretor
+		}
+	}
+
+	get defaultCretor() {
+		return {
+			username: '',
+			email: '',
+			address: '',
+			biography: ''
 		}
 	}
 
 	componentDidMount() {
 		this.web3.eth.getCoinbase((err, account) => {
+
 			this.crowdSaleApp.deployed()
 				.then((crowdSaleAppInstance) => {
 					this.setState({
@@ -53,16 +61,31 @@ export class App extends React.PureComponent {
 						crowdSaleAppInstance
 					}, () => {
 						this.watchEvents()
+						setInterval(this.onListenChangeAccount, 1000)
 					})
 
 					return crowdSaleAppInstance.creators(account)
 				})
 				.then(id => {
-					console.log(id)
 					this.getUserInfo(id)
 				})
 				.catch(console.log)
 		})
+	}
+
+	onListenChangeAccount = () => {
+		const account = this.web3.eth.accounts[0]
+		if (account !== this.state.account) {
+			this.setState({account}, () => {
+				const isReload = confirm('You changed account. Do you want to reload this website.')
+				if(isReload) {
+					location.replace('http://localhost:3000')
+					location.reload()
+				} else {
+					alert('Your account changed. Please reload this website again.')
+				}
+			})
+		}
 	}
 
 	watchEvents(filter = {}) {
@@ -81,7 +104,12 @@ export class App extends React.PureComponent {
 	}
 
 	getUserInfo = (id) => {
-		if(!id) return null
+		if (!id) {
+			this.setState({
+				currentCreator: this.defaultCretor
+			})
+			return
+		}
 		axios
 			.get(`https://ipfs.io/ipfs/${id}`)
 			.then(result => {
@@ -92,7 +120,11 @@ export class App extends React.PureComponent {
 					}
 				})
 			})
-			.catch(console.log)
+			.catch(() => {
+				this.setState({
+					currentCreator: this.defaultCretor
+				})
+			})
 	}
 
 	render() {
@@ -115,6 +147,8 @@ export class App extends React.PureComponent {
 					<div>
 						<AppHeader/>
 						<RouterContent/>
+						<BackgroundImage/>
+
 					</div>
 				</BrowserRouter>
 			</AppContext.Provider>

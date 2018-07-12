@@ -3,15 +3,15 @@ import { Colors } from '../../_Variables/Colors'
 import { Link } from 'react-router-dom'
 
 export const Container = styled.div`
-	background: white;
+	background: linear-gradient(to left,#26eae0,#0ed2f7);
+	box-shadow: 0px 2px 6px 0px #8e858540;
 	position: fixed;
 	left: 0;
 	right: 0;
 	top: 0;
-	color: ${Colors.primary};
+	color: ${Colors.secondary};
 	display: flex;
 	font-weight: 300;
-	border-bottom: 1px solid ${Colors.primary};
 	z-index: 1000;
 	height: 50px;
   align-items: center;
@@ -23,11 +23,11 @@ export const Logo = styled.h1`
 `
 
 export const MenuItem = styled(Link)`
+	display: ${props => props.show || 'flex'};
 	padding: 0 16px;
 	cursor: pointer;
-	color: ${Colors.primary};
+	color: ${Colors.secondary};
 	text-decoration: none;
-	display: flex;
 	align-items: center;
 	height: 100%;
 	&:hover {

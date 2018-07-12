@@ -24,7 +24,10 @@ class StartContainer extends React.PureComponent {
 		ipfsHash: '',
 		buffer: null,
 		imagePreviewUrl: '',
-		status: ''
+		status: '',
+
+		startDate: null,
+		endDate: null
 	}
 
 	// static getDerivedStateFromProps(props) {
@@ -116,6 +119,10 @@ class StartContainer extends React.PureComponent {
 				onChangeText={this.onChangeText}
 				onCreate={this.onCreate}
 				captureFile={this.captureFile}
+
+				onDatesChange={({startDate, endDate}) => this.setState({startDate, endDate})}
+				onFocusChange={focusedInput => this.setState({focusedInput})} // PropTypes.func.isRequired,
+
 			/>
 		)
 	}

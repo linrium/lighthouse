@@ -39,7 +39,6 @@ class AppCard extends React.PureComponent {
 	}
 
 	componentDidMount() {
-		console.log(this.props)
 		this.crowdSale.at(this.props.args.contractAddr)
 			.then(instance => {
 				this.crowdSaleInstance = instance
@@ -71,7 +70,6 @@ class AppCard extends React.PureComponent {
 				.then(this.getCreator)
 		])
 			.then(([amountRaised, deadline, creator]) => {
-				console.log(creator)
 				if(this._mouted) {
 					this.setState({
 						amountRaised: this.props.web3.fromWei(amountRaised.toNumber(), 'ether'),
@@ -90,6 +88,11 @@ class AppCard extends React.PureComponent {
 			fundingGoalInEthers,
 			thumbnailHash
 		} = this.props.args
+
+		if(!creator) {
+
+		}
+
 		return (
 			<Container to={this.props.to}>
 				<Thumbnail value={`https://ipfs.io/ipfs/${thumbnailHash}`}/>

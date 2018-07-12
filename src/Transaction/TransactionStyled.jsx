@@ -12,12 +12,10 @@ export const Container = styled.div`
 `
 
 export const Wrapper = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	padding: 40px 0;
-  margin-top: 49px;
-  max-width: 600px;
+	width: 1024px;
+  margin: 100px 0;
+  background: white;
+  box-shadow: -1px 5px 14px 0px #8e858559;
 `
 
 export const Label = styled.span`

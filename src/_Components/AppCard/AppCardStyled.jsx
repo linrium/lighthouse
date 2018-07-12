@@ -6,17 +6,18 @@ import { Images } from '../../_Variables/Images'
 export const Container = styled(Link)`
 	display: block;
 	width: 400px;
-	//height: 500px;
-	border: 1px solid ${Colors.primary};
 	font-weight: 300;
 	cursor: pointer;
 	text-decoration: none;
 	color: ${Colors.primary};
+  overflow: hidden;
+  box-shadow: -1px 5px 14px 0px #8e858559;
+  background: white;
 `
 
 export const Thumbnail = styled.div`
 	background: url("${props => props.value || Images.thumbnail1}") no-repeat center center;
-	background-size: 100%;
+	background-size: cover;
 	width: 100%;
 	height: 300px;
 `

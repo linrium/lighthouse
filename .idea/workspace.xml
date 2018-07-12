@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b4ef42f-ed72-4136-8cc4-7c06ae47c472" name="Default" comment="update">
+    <list default="true" id="3b4ef42f-ed72-4136-8cc4-7c06ae47c472" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/AppStyled.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Project/ProjectContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Project/ProjectContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Project/ProjectPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Project/ProjectPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Home/HomeContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Home/HomeContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Project/ProjectStyled.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Project/ProjectStyled.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SignUp/SignUpContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SignUp/SignUpContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SignUp/SignUpPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SignUp/SignUpPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SignUp/SignUpStyled.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SignUp/SignUpStyled.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Start/StartContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Start/StartContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Start/StartPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Start/StartPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Start/StartStyled.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Start/StartStyled.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Transaction/TransactionStyled.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transaction/TransactionStyled.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/_Components/AppCard/AppCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_Components/AppCard/AppCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_Components/AppCard/AppCardStyled.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_Components/AppCard/AppCardStyled.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/_Components/AppHeader/AppHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_Components/AppHeader/AppHeader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_Components/AppHeader/AppHeaderStyled.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_Components/AppHeader/AppHeaderStyled.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_Variables/Colors.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_Variables/Colors.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,104 +30,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SignUpContainer.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SignUp/SignUpContainer.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1211">
-              <caret line="119" column="26" selection-start-line="119" selection-start-column="26" selection-end-line="119" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="82" column="25" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ipfsAPI.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/_API/ipfsAPI.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProjectContainer.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Project/ProjectContainer.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="80" column="38" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StartContainer.jsx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Start/StartContainer.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="88" column="8" lean-forward="true" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="514">
-                <caret line="20" column="54" lean-forward="true" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CrowdSaleApp.sol" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/contracts/CrowdSaleApp.sol">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="54" column="53" selection-start-line="54" selection-start-column="53" selection-end-line="54" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2_deploy_contracts.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/migrations/2_deploy_contracts.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SignUpPage.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SignUp/SignUpPage.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="47" column="20" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -132,16 +42,19 @@
       <find>thumbnail</find>
       <find>.watch</find>
       <find>FundTransfer</find>
-      <find>crowdSaleApp</find>
       <find>crowdSale</find>
       <find>Log</find>
-      <find>crowdSaleAppInstance</find>
       <find>new Big</find>
       <find>toNumber</find>
-      <find>account</find>
       <find>createCreator</find>
       <find>ipfs/</find>
       <find>getUserInfo</find>
+      <find>web3</find>
+      <find>crowdSaleAppInstance</find>
+      <find>crowdSaleApp</find>
+      <find>account</find>
+      <find>border-radius</find>
+      <find>Wrapper</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -153,7 +66,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/index.css" />
         <option value="$PROJECT_DIR$/src/Start/react-dates.css" />
         <option value="$PROJECT_DIR$/src/Start/countries.json" />
         <option value="$PROJECT_DIR$/src/_Components/AppSelect/AppSelect.jsx" />
@@ -170,40 +82,41 @@
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/utils.js" />
         <option value="$PROJECT_DIR$/src/_Components/AppInput/AppInputStyled.jsx" />
-        <option value="$PROJECT_DIR$/contracts/CrowdSale.sol" />
         <option value="$PROJECT_DIR$/contracts/CrowdSaleCategory.sol" />
         <option value="$PROJECT_DIR$/src/_API/captureFile.jsx" />
         <option value="$PROJECT_DIR$/src/_Components/AppButton/AppButton.jsx" />
         <option value="$PROJECT_DIR$/src/_API/ipfsAPI.jsx" />
-        <option value="$PROJECT_DIR$/src/Start/StartPage.jsx" />
         <option value="$PROJECT_DIR$/src/User/UserStyled.jsx" />
         <option value="$PROJECT_DIR$/src/_API/index.jsx" />
         <option value="$PROJECT_DIR$/contracts/CrowdSaleApp.sol" />
         <option value="$PROJECT_DIR$/src/User/UserPage.jsx" />
         <option value="$PROJECT_DIR$/src/User/UserContainer.jsx" />
-        <option value="$PROJECT_DIR$/src/_Components/AppHeader/AppHeaderStyled.jsx" />
-        <option value="$PROJECT_DIR$/src/_Variables/Colors.jsx" />
-        <option value="$PROJECT_DIR$/src/Start/StartStyled.jsx" />
-        <option value="$PROJECT_DIR$/src/SignUp/SignUpStyled.jsx" />
         <option value="$PROJECT_DIR$/src/Transaction/TransactionPage.jsx" />
         <option value="$PROJECT_DIR$/src/Transaction/TransactionContainer.jsx" />
-        <option value="$PROJECT_DIR$/src/SignUp/SignUpPage.jsx" />
         <option value="$PROJECT_DIR$/src/MyProject/MyProjectContainer.jsx" />
         <option value="$PROJECT_DIR$/src/MyProject/MyProjectPage.jsx" />
         <option value="$PROJECT_DIR$/src/routes.jsx" />
-        <option value="$PROJECT_DIR$/src/Home/HomeContainer.jsx" />
         <option value="$PROJECT_DIR$/src/Home/HomePage.jsx" />
         <option value="$PROJECT_DIR$/src/Home/HomeListCards.jsx" />
-        <option value="$PROJECT_DIR$/src/_Components/AppCard/AppCardStyled.jsx" />
-        <option value="$PROJECT_DIR$/src/_Components/AppCard/AppCard.jsx" />
-        <option value="$PROJECT_DIR$/src/Project/ProjectStyled.jsx" />
-        <option value="$PROJECT_DIR$/src/_Components/AppHeader/AppHeader.jsx" />
         <option value="$PROJECT_DIR$/src/Project/ProjectPage.jsx" />
         <option value="$PROJECT_DIR$/src/Project/ProjectContainer.jsx" />
         <option value="$PROJECT_DIR$/src/SignUp/SignUpContainer.jsx" />
-        <option value="$PROJECT_DIR$/src/App.jsx" />
+        <option value="$PROJECT_DIR$/contracts/CrowdSale.sol" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/Home/HomeContainer.jsx" />
+        <option value="$PROJECT_DIR$/src/_Components/AppHeader/AppHeader.jsx" />
+        <option value="$PROJECT_DIR$/src/_Variables/Colors.jsx" />
+        <option value="$PROJECT_DIR$/src/_Components/AppHeader/AppHeaderStyled.jsx" />
+        <option value="$PROJECT_DIR$/src/_Components/AppCard/AppCardStyled.jsx" />
+        <option value="$PROJECT_DIR$/src/_Components/AppCard/AppCard.jsx" />
+        <option value="$PROJECT_DIR$/src/Project/ProjectStyled.jsx" />
+        <option value="$PROJECT_DIR$/src/Start/StartStyled.jsx" />
+        <option value="$PROJECT_DIR$/src/AppStyled.jsx" />
+        <option value="$PROJECT_DIR$/src/SignUp/SignUpPage.jsx" />
+        <option value="$PROJECT_DIR$/src/SignUp/SignUpStyled.jsx" />
         <option value="$PROJECT_DIR$/src/Start/StartContainer.jsx" />
+        <option value="$PROJECT_DIR$/src/Start/StartPage.jsx" />
+        <option value="$PROJECT_DIR$/src/App.jsx" />
       </list>
     </option>
   </component>
@@ -225,10 +138,9 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="22" />
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1920" />
-    <option name="height" value="1133" />
+    <option name="height" value="1200" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -395,7 +307,7 @@
       <workItem from="1530436588921" duration="9128000" />
       <workItem from="1530804232736" duration="23000" />
       <workItem from="1531192575545" duration="1666000" />
-      <workItem from="1531228610426" duration="4055000" />
+      <workItem from="1531228610426" duration="12273000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1530101353729</created>
@@ -509,26 +421,39 @@
       <option name="project" value="LOCAL" />
       <updated>1530441442290</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="update README, fix get current user">
+      <created>1531287330171</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1531287330172</updated>
+    </task>
+    <task id="LOCAL-00018" summary="add README">
+      <created>1531366565062</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1531366565063</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113186000" />
+    <option name="totallyTimeSpent" value="121404000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1920" height="1133" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.115015976" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.115015976" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32921028" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32894737" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Mongo Explorer" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.31113225" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.2868421" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" order="8" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -578,38 +503,11 @@
     <MESSAGE value="project page" />
     <MESSAGE value="update user info" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="update README, fix get current user" />
+    <MESSAGE value="add README" />
+    <option name="LAST_COMMIT_MESSAGE" value="add README" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/react-dates.css" />
-    <entry file="file://$PROJECT_DIR$/src/Start/react-dates.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/_Components/AppSelect/AppSelect.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="44" column="42" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Start/countries.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="962" column="9" selection-start-line="962" selection-start-column="5" selection-end-line="962" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/_Variables/Images.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" column="12" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CrowdSaleApp/CrowdSaleApp.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
@@ -705,13 +603,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Start/StartPage.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="106" column="22" lean-forward="true" selection-start-line="106" selection-start-column="22" selection-end-line="106" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Home/HomeStyled.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
@@ -722,27 +613,6 @@
     <entry file="file://$PROJECT_DIR$/src/User/UserStyled.jsx" />
     <entry file="file://$PROJECT_DIR$/src/User/UserContainer.jsx" />
     <entry file="file://$PROJECT_DIR$/src/User/UserPage.jsx" />
-    <entry file="file://$PROJECT_DIR$/src/_Variables/Colors.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Start/StartStyled.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="806">
-          <caret line="51" column="47" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SignUp/SignUpStyled.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1326">
-          <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Transaction/TransactionPage.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
@@ -778,106 +648,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Home/HomePage.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Home/HomeListCards.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/_Components/AppCard/AppCardStyled.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="36" column="21" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Project/ProjectStyled.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1872">
-          <caret line="74" column="19" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/_Components/AppHeader/AppHeaderStyled.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1144">
-          <caret line="46" column="1" selection-start-line="37" selection-end-line="46" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Home/HomeContainer.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="728">
-          <caret line="32" column="6" selection-start-line="22" selection-start-column="4" selection-end-line="32" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/_Components/AppCard/AppCard.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1248">
-          <caret line="64" selection-start-line="60" selection-start-column="2" selection-end-line="64" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/_Components/AppHeader/AppHeader.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="25" column="35" lean-forward="true" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Project/ProjectPage.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/CrowdSale.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1430">
-          <caret line="55" column="22" selection-start-line="55" selection-start-column="15" selection-end-line="55" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SignUp/SignUpPage.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="47" column="20" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/_API/ipfsAPI.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="82" column="25" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -891,23 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/CrowdSaleApp.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="54" column="53" selection-start-line="54" selection-start-column="53" selection-end-line="54" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="514">
-            <caret line="20" column="54" lean-forward="true" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Project/ProjectContainer.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1173">
@@ -918,9 +675,136 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum-bridge/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-2491" />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/CrowdSaleApp.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1404">
+          <caret line="54" column="53" selection-start-line="54" selection-start-column="53" selection-end-line="54" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/CrowdSale.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="36" column="23" lean-forward="true" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="499">
+            <caret line="32" column="45" lean-forward="true" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Home/HomeListCards.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Home/HomePage.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Home/HomeContainer.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/_API/index.jsx">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/_Variables/Colors.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="20" lean-forward="true" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/_Components/AppHeader/AppHeader.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="28" column="14" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/_Components/AppHeader/AppHeaderStyled.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" column="55" selection-start-line="5" selection-start-column="55" selection-end-line="5" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Transaction/TransactionStyled.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" selection-end-line="1" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/_Components/AppCard/AppCard.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="101" column="22" lean-forward="true" selection-start-line="101" selection-start-column="22" selection-end-line="101" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/_Components/AppCard/AppCardStyled.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="13" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppStyled.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/SignUp/SignUpContainer.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1211">
+        <state relative-caret-position="718">
           <caret line="119" column="26" selection-start-line="119" selection-start-column="26" selection-end-line="119" selection-end-column="26" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
@@ -928,10 +812,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/SignUp/SignUpPage.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="49" column="13" lean-forward="true" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SignUp/SignUpStyled.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="17" column="11" lean-forward="true" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Project/ProjectStyled.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Project/ProjectPage.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-420">
+          <caret line="48" column="14" lean-forward="true" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Start/StartStyled.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Start/StartContainer.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="88" column="8" lean-forward="true" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="8" />
+        <state relative-caret-position="260">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Start/StartPage.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="42" column="51" lean-forward="true" selection-start-line="42" selection-start-column="51" selection-end-line="42" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="762">
+          <caret line="75" column="33" lean-forward="true" selection-start-line="75" selection-start-column="33" selection-end-line="75" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -15,9 +15,10 @@ export const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	padding: 40px 0;
-  margin-top: 49px;
+	padding: 40px;
   max-width: 600px;
+  margin: 100px 0;
+  background: white;
 `
 
 export const Label = styled.span`
