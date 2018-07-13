@@ -56,7 +56,6 @@ class ProjectContainer extends React.PureComponent {
 			this.state.LogCrowdSaleCreatedByAddr &&
 			!this.isLoaded
 		) {
-			console.log(this.props)
 
 			this.crowdSaleApp.deployed()
 				.then((crowdSaleAppInstance) => {
@@ -68,7 +67,6 @@ class ProjectContainer extends React.PureComponent {
 				})
 				.then(this.getCreator)
 				.then(result => {
-					console.log('result', result)
 					this.setState({
 						creator: result.data
 					})
@@ -124,7 +122,6 @@ class ProjectContainer extends React.PureComponent {
 			.watch((err, logs) => {
 				if (err) return console.error(err)
 
-				console.log('logs', logs)
 			})
 	}
 

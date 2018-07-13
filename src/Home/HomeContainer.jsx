@@ -5,7 +5,6 @@ import {withRouter} from 'react-router-dom'
 
 class HomeContainer extends React.PureComponent {
 	static getDerivedStateFromProps(props) {
-		console.log(props)
 		return {
 			LogCrowdSaleCreated: props.match.path === '/' ?
 				props.LogCrowdSaleCreated :

@@ -50,7 +50,6 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "dotenv": "^2.0.0",
     "ipfs-api": "^22.1.1",
     "moment": "^2.22.2",
     "ramda": "^0.25.0",

@@ -53,7 +53,6 @@ class SignUpContainer extends React.PureComponent {
 		axios
 			.get(`https://ipfs.io/ipfs/${id}`)
 			.then(result => {
-				console.log(result)
 				this.setState({
 					...result.data,
 					imagePreviewUrl: `https://ipfs.io/ipfs/${result.data.avatarHash}`

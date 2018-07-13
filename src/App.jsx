@@ -92,7 +92,6 @@ export class App extends React.PureComponent {
 			fromBlock: 0,
 			toBlock: 'latest'
 		}).get((error, logs) => {
-			console.log('allEvents', logs)
 			this.setState({
 				LogCrowdSaleCreated: logs
 			})

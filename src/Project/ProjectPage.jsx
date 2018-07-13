@@ -45,7 +45,6 @@ class ProjectPage extends React.PureComponent {
 			thumbnailHash,
 		} = this.props.LogCrowdSaleCreatedByAddr.args
 		const {creator} = this.props
-		console.log(creator)
 		return (
 			<Container>
 				<Wrapper>

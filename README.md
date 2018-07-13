@@ -18,20 +18,6 @@ $ cd lighthouse
 $ yarn
 ```
 
-Install and run Oraclize local
-
-```sh
-$ cd ethereum-bridge
-$ yarn
-$ node bridge -a 9 -H 127.0.0.1 -p 7545 --dev
-```
-
-Add `OAR = OraclizeAddrResolverI(EnterYourOarCustomAddress);` to your contract constructor, example:
-Where `EnterYourOarCustomAddress` is the address resolver generated when you have run the script
-![OAR](https://imgur.com/wTenrvK.jpg)
-Copy this line `OAR = OraclizeAddrResolverI(0x6f485C8BF6fc43eA212E93BBF8ce046C7f1cb475);` and paste to file `CrowdSale.sol` in folder `contracts`
-![constructor](https://imgur.com/t9d7eI5.jpg)
-
 Build and migration smart contract to local blockchain
 ```sh
 $ truffle compile

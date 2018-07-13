@@ -102,7 +102,6 @@ class StartContainer extends React.PureComponent {
 					{from: this.props.account}
 				)
 				.then(result => {
-					console.log(result)
 					this.setState({
 						status: 'Create your project succeeded.',
 						loading: false
