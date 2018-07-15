@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "ipfs-api": "^22.1.1",
+    "ipfs-api": "^22.2.3",
     "moment": "^2.22.2",
     "ramda": "^0.25.0",
     "react": "^16.4.1",
@@ -63,7 +63,8 @@
     "react-router-dom": "^4.3.1",
     "react-spinners": "^0.3.2",
     "styled-components": "^3.3.3",
-    "truffle-hdwallet-provider": "^0.0.5"
+    "truffle-hdwallet-provider": "^0.0.5",
+    "uglifyjs-webpack-plugin": "^1.2.7"
   },
   "scripts": {
     "start": "node scripts/start.js",
