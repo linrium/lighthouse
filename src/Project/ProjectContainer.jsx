@@ -96,6 +96,7 @@ class ProjectContainer extends React.PureComponent {
 			.then(([amountRaised, deadline, totalContributors]) => {
 				this.setState({
 					amountRaised: this.props.web3.fromWei(amountRaised.toNumber(), 'ether'),
+					crowSaleDeadline: moment.unix(deadline),
 					deadline: moment.unix(deadline).fromNow().capitalize(),
 					totalContributors: totalContributors.toNumber()
 				})
@@ -143,6 +144,16 @@ class ProjectContainer extends React.PureComponent {
 			.catch(console.log)
 	}
 
+	onSafeWithdrawal = () => {
+		this.crowdSaleInstance.safeWithdrawal({
+			from: this.props.account
+		})
+			.then(result => {
+				console.log(result)
+			})
+			.catch(console.log)
+	}
+
 	render() {
 		return (
 			<ProjectPage
@@ -151,6 +162,7 @@ class ProjectContainer extends React.PureComponent {
 				web3Provider={this.props.web3Provider}
 				onChangeText={this.onChangeText}
 				onFund={this.onFund}
+				onSafeWithdrawal={this.onSafeWithdrawal}
 			/>
 		)
 	}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import AppButton from '../_Components/AppButton/AppButton'
 import { ProgressBar } from '../_Components/AppCard/AppCardStyled'
 import AppInput from '../_Components/AppInput/AppInput'
@@ -19,6 +19,7 @@ import {
 	UserInfoContainer,
 	Wrapper
 } from './ProjectStyled'
+import moment from 'moment'
 
 class ProjectPage extends React.PureComponent {
 	static defaultProps = {
@@ -37,7 +38,12 @@ class ProjectPage extends React.PureComponent {
 		return ((this.props.amountRaised / fundingGoalInEthers.toNumber()) * 100).toFixed(2)
 	}
 
+	get isDeadlineReached() {
+		return moment().isAfter(this.props.crowSaleDeadline)
+	}
+
 	render() {
+		// console.log(this.props.LogFundTransfer)
 		const {
 			title,
 			description,
@@ -86,6 +92,16 @@ class ProjectPage extends React.PureComponent {
 							flex: 0.7,
 							marginLeft: 32
 						}}>
+							{
+								this.isDeadlineReached &&
+								<AppButton
+									value="Withdraw"
+									textAlign="center"
+									onClick={this.props.onSafeWithdrawal}
+								/>
+							}
+
+
 							<ProgressBar>
 								<ProgressBar style={{width: this.getPledgedPercent + '%'}} bgColor={Colors.accent}/>
 							</ProgressBar>
@@ -109,16 +125,22 @@ class ProjectPage extends React.PureComponent {
 								<Text>days to go</Text>
 							</GroupText>
 
-							<AppInput
-								placeholder="Ex: 1"
-								value={this.props.valueFund}
-								onChange={this.props.onChangeText('valueFund')}
-							/>
-							<AppButton
-								value="Back this project"
-								textAlign="center"
-								onClick={this.props.onFund}
-							/>
+							{
+								!this.isDeadlineReached &&
+								<Fragment>
+									<AppInput
+										placeholder="Ex: 1"
+										value={this.props.valueFund}
+										onChange={this.props.onChangeText('valueFund')}
+									/>
+									<AppButton
+										value="Back this project"
+										textAlign="center"
+										onClick={this.props.onFund}
+									/>
+								</Fragment>
+							}
+
 						</div>
 					</InfoContainer>
 				</Wrapper>

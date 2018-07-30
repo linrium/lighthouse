@@ -78,7 +78,7 @@ contract CrowdSale {
             fundingGoalReached = true;
             emit LogGoalReached(owner, amountRaised);
         }
-        crowdSaleClosed = true;
+        crowdSaleClosed = false;
     }
 
     function safeWithdrawal() public afterDeadline {
